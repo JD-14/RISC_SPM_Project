@@ -1,0 +1,177 @@
+Wed Dec 08 16:43:47 UTC 2021 - Executing "openroad -python /openlane/scripts/extract_metal_layers.py -t /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef -o /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/met_layers_list.txt"
+
+Wed Dec 08 16:43:48 UTC 2021 - Executing "/openlane/scripts/mergeLef.py -i /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/techlef/sky130_fd_sc_hd.tlef {/home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__decap_12.lef /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__fakediode_2.lef /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_fd_sc_hd.lef /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__fill_8.lef /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lef/sky130_ef_sc_hd__fill_12.lef} -o /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/merged_unpadded.lef |& tee >&@stdout"
+
+Wed Dec 08 16:43:48 UTC 2021 - Executing "/openlane/scripts/libtrim.pl /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/trimmed.lib.exclude.list > /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/trimmed.lib"
+
+Wed Dec 08 16:43:49 UTC 2021 - Executing "openroad -python /openlane/scripts/new_tracks.py -i /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tracks.info -o /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/config.tracks"
+
+Wed Dec 08 16:43:50 UTC 2021 - Executing "echo {openlane mpw-3a} > /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/OPENLANE_VERSION"
+
+Wed Dec 08 16:43:50 UTC 2021 - Executing "sed -E {s/^([[:space:]]+)pg_pin(.*)/\1pin\2\n\1    direction : "inout";/g} /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib > /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/sky130_fd_sc_hd__tt_025C_1v80.no_pg.lib"
+
+Wed Dec 08 16:43:50 UTC 2021 - Executing "yosys -c /openlane/scripts/synth.tcl -l /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/synthesis/11-yosys.log |& tee >&@stdout"
+
+Wed Dec 08 16:44:02 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/RISC_SPM\/runs\/RUN_2021.12.08_16.43.47\/results\/synthesis\/RISC_SPM.synthesis.v/} /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/config.tcl"
+
+Wed Dec 08 16:44:02 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openlane\/designs\/RISC_SPM\/runs\/arafin_test2\/results\/synthesis\/RISC_SPM.synthesis.v/} /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/config.tcl"
+
+Wed Dec 08 16:44:02 UTC 2021 - Executing "sed -i /defparam/d /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/results/synthesis/RISC_SPM.synthesis.v"
+
+Wed Dec 08 16:44:02 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_sta.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/synthesis/11-opensta"
+
+Wed Dec 08 16:44:05 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_floorplan.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/floorplan/13-verilog2def.openroad.log"
+
+Wed Dec 08 16:44:07 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_ioplacer.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/floorplan/14-ioPlacer.log"
+
+Wed Dec 08 16:44:08 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_tapcell.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/floorplan/15-tapcell.log"
+
+Wed Dec 08 16:44:10 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_pdn.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/floorplan/17-pdn.log"
+
+Wed Dec 08 16:44:13 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_replace.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/placement/18-replace.log"
+
+Wed Dec 08 16:44:21 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_resizer.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/placement/18-resizer_design_optimization.log"
+
+Wed Dec 08 16:44:28 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/19-write_verilog.log"
+
+Wed Dec 08 16:44:29 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/RISC_SPM\/runs\/RUN_2021.12.08_16.43.47\/results\/synthesis\/RISC_SPM.synthesis_optimized.v/} /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/config.tcl"
+
+Wed Dec 08 16:44:29 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openlane\/designs\/RISC_SPM\/runs\/RUN_2021.12.08_16.43.47\/results\/synthesis\/RISC_SPM.synthesis.v/} /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/config.tcl"
+
+Wed Dec 08 16:44:29 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_sta.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/placement/19-resizer_design_optimization_sta"
+
+Wed Dec 08 16:44:32 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_opendp.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/placement/21-opendp.log"
+
+Wed Dec 08 16:44:34 UTC 2021 - Executing "/openlane/scripts/libtrim.pl /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/cts.lib.exclude.list > /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/cts.lib"
+
+Wed Dec 08 16:44:35 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_cts.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/cts/22-cts.log"
+
+Wed Dec 08 16:45:17 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/23-write_verilog.log"
+
+Wed Dec 08 16:45:18 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/RISC_SPM\/runs\/RUN_2021.12.08_16.43.47\/results\/synthesis\/RISC_SPM.synthesis_cts.v/} /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/config.tcl"
+
+Wed Dec 08 16:45:18 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openlane\/designs\/RISC_SPM\/runs\/RUN_2021.12.08_16.43.47\/results\/synthesis\/RISC_SPM.synthesis_optimized.v/} /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/config.tcl"
+
+Wed Dec 08 16:45:18 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_resizer_timing.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/placement/23-resizer_timing_optimization.log"
+
+Wed Dec 08 16:45:22 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/24-write_verilog.log"
+
+Wed Dec 08 16:45:23 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/RISC_SPM\/runs\/RUN_2021.12.08_16.43.47\/results\/synthesis\/RISC_SPM.synthesis_optimized.v/} /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/config.tcl"
+
+Wed Dec 08 16:45:23 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openlane\/designs\/RISC_SPM\/runs\/RUN_2021.12.08_16.43.47\/results\/synthesis\/RISC_SPM.synthesis_cts.v/} /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/config.tcl"
+
+Wed Dec 08 16:45:24 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_sta.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/placement/24-resizer_timing_optimization_sta"
+
+Wed Dec 08 16:45:26 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_resizer_routing_timing.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/routing/25-resizer_timing_optimization.log"
+
+Wed Dec 08 16:45:32 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/26-write_verilog.log"
+
+Wed Dec 08 16:45:34 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/RISC_SPM\/runs\/RUN_2021.12.08_16.43.47\/results\/synthesis\/RISC_SPM.synthesis_optimized.v/} /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/config.tcl"
+
+Wed Dec 08 16:45:34 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openlane\/designs\/RISC_SPM\/runs\/RUN_2021.12.08_16.43.47\/results\/synthesis\/RISC_SPM.synthesis_optimized.v/} /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/config.tcl"
+
+Wed Dec 08 16:45:34 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_sta.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/routing/26-resizer_timing_optimization_sta"
+
+Wed Dec 08 16:45:36 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_opendp.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/placement/28-opendp.log"
+
+Wed Dec 08 16:45:38 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_groute.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/routing/29-fastroute.log"
+
+Wed Dec 08 16:45:46 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_fill.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/routing/30-addspacers.log"
+
+Wed Dec 08 16:45:48 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/31-write_verilog.log"
+
+Wed Dec 08 16:45:49 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/RISC_SPM\/runs\/RUN_2021.12.08_16.43.47\/results\/synthesis\/RISC_SPM.synthesis_preroute.v/} /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/config.tcl"
+
+Wed Dec 08 16:45:49 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openlane\/designs\/RISC_SPM\/runs\/RUN_2021.12.08_16.43.47\/results\/synthesis\/RISC_SPM.synthesis_optimized.v/} /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/config.tcl"
+
+Wed Dec 08 16:45:49 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_droute.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/routing/32-tritonRoute.log"
+
+Wed Dec 08 16:54:45 UTC 2021 - Executing "openroad -python /openlane/scripts/tr2klayout.py -i /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/routing/32-tritonRoute.drc -o /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/routing/32-tritonRoute.klayout.xml --design-name RISC_SPM"
+
+Wed Dec 08 16:54:46 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_rcx.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/routing/33-spef_extraction.log"
+
+Wed Dec 08 16:54:51 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_sta.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/routing/33-spef_extraction_sta"
+
+Wed Dec 08 16:54:57 UTC 2021 - Executing "openroad -python /openlane/scripts/write_powered_def.py -d /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/results/routing/31-RISC_SPM.def -l /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/merged.lef --power-port VPWR --ground-port VGND --powered-netlist {} -o /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/routing/35-RISC_SPM.powered.def |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/lvs/35-write_powered_verilog.log"
+
+Wed Dec 08 16:55:00 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_write_verilog.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/36-write_verilog.log"
+
+Wed Dec 08 16:55:02 UTC 2021 - Executing "sed -i -e {s/\(set ::env(CURRENT_NETLIST)\).*/\1 \/openlane\/designs\/RISC_SPM\/runs\/RUN_2021.12.08_16.43.47\/results\/lvs\/RISC_SPM.lvs.powered.v/} /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/config.tcl"
+
+Wed Dec 08 16:55:02 UTC 2021 - Executing "sed -i -e {s/\(set ::env(PREV_NETLIST)\).*/\1 \/openlane\/designs\/RISC_SPM\/runs\/RUN_2021.12.08_16.43.47\/results\/synthesis\/RISC_SPM.synthesis_preroute.v/} /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/config.tcl"
+
+Wed Dec 08 16:55:02 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.tech/magic/sky130A.magicrc /openlane/scripts/magic/mag_gds.tcl </dev/null |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/magic/37-magic.log"
+
+Wed Dec 08 16:55:09 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.tech/magic/sky130A.magicrc /openlane/scripts/magic/gds_pointers.tcl </dev/null |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/magic/38-magic.mag.gds_ptrs.log"
+
+Wed Dec 08 16:55:14 UTC 2021 - Executing "sed -i -n {/^<< properties >>/,/^<< end >>/p} /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/magic/magic_gds_ptrs.mag"
+
+Wed Dec 08 16:55:14 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.tech/magic/sky130A.magicrc /openlane/scripts/magic/lef.tcl </dev/null |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/magic/39-magic.lef.log"
+
+Wed Dec 08 16:55:21 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.tech/magic/sky130A.magicrc /openlane/scripts/magic/maglef.tcl </dev/null |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/magic/40-magic.maglef.log"
+
+Wed Dec 08 16:55:22 UTC 2021 - Executing "bash /openlane/scripts/klayout/def2gds.sh /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.tech/klayout/sky130A.lyt /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/results/routing/31-RISC_SPM.def RISC_SPM /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/results/klayout/RISC_SPM.gds {/home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_ef_sc_hd__fakediode_2.gds /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_ef_sc_hd__fill_4.gds /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_ef_sc_hd__decap_12.gds /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_ef_sc_hd__fill_8.gds /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_fd_sc_hd.gds /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/gds/sky130_ef_sc_hd__fill_12.gds } |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/klayout/41-klayout.log"
+
+Wed Dec 08 16:55:24 UTC 2021 - Executing "bash /openlane/scripts/klayout/xor.sh /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/results/magic/RISC_SPM.gds /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/results/klayout/RISC_SPM.gds RISC_SPM /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/results/klayout/RISC_SPM.xor.gds |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/klayout/42-klayout.xor.log"
+
+Wed Dec 08 16:55:42 UTC 2021 - Executing "openroad -python /openlane/scripts/parse_klayout_xor_log.py -l /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/klayout/42-klayout.xor.log -o /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/klayout/42-klayout.xor.rpt"
+
+Wed Dec 08 16:55:44 UTC 2021 - Executing "bash /openlane/scripts/klayout/xor.sh /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/results/magic/RISC_SPM.gds /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/results/klayout/RISC_SPM.gds RISC_SPM /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/results/klayout/RISC_SPM.xor.xml |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/klayout/43-klayout.xor.log"
+
+Wed Dec 08 16:56:06 UTC 2021 - Executing "openroad -python /openlane/scripts/parse_klayout_xor_log.py -l /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/klayout/43-klayout.xor.log -o /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/klayout/43-klayout.xor.rpt"
+
+Wed Dec 08 16:56:07 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.tech/magic/sky130A.magicrc /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/magic_spice.tcl </dev/null |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/magic/44-magic_spice.log"
+
+Wed Dec 08 16:56:23 UTC 2021 - Executing "netgen -batch source /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/lvs/setup_file.lef.lvs |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/lvs/45-lvs.lef.log"
+
+Wed Dec 08 16:56:25 UTC 2021 - Executing "magic -noconsole -dnull -rcfile /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.tech/magic/sky130A.magicrc /openlane/scripts/magic/drc.tcl </dev/null |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/magic/46-magic.drc.log"
+
+Wed Dec 08 16:57:55 UTC 2021 - Executing "openroad -python /openlane/scripts/magic_drc_to_tcl.py -i /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/magic/46-magic.drc -o /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/magic/46-magic.drc.tcl"
+
+Wed Dec 08 16:57:56 UTC 2021 - Executing "openroad -python /openlane/scripts/magic_drc_to_tr_drc.py -i /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/magic/46-magic.drc -o /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/magic/46-magic.tr.drc"
+
+Wed Dec 08 16:57:58 UTC 2021 - Executing "openroad -python /openlane/scripts/tr2klayout.py -i /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/magic/46-magic.tr.drc -o /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/magic/46-magic.drc.klayout.xml --design-name RISC_SPM"
+
+Wed Dec 08 16:57:59 UTC 2021 - Executing "openroad -python /openlane/scripts/magic_drc_to_rdb.py --magic_drc_in /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/magic/46-magic.drc --rdb_out /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/magic/46-magic.drc.rdb"
+
+Wed Dec 08 16:58:01 UTC 2021 - Executing "openroad -exit /openlane/scripts/openroad/or_antenna_check.tcl |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/routing/47-or_antenna.log"
+
+Wed Dec 08 16:58:04 UTC 2021 - Executing "mv -f /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/routing/antenna.rpt /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/routing/48-antenna.rpt"
+
+Wed Dec 08 16:58:04 UTC 2021 - Executing "awk { BEGIN {  # Print power and standard_input definitions
+    print "VPWR power 1.8";
+    print "VGND power 0.0";
+    print "#define std_input min@VGND max@VPWR";
+}
+$1 == "input" {  # Print input nets
+    gsub(/;/, "");
+    if ( $2 == "VPWR" || $2 == "VGND" ) {  # ignore power nets
+        next;
+    }
+    if ( NF == 3 ) {  # print buses as net[range]
+        $2 = $3 $2;
+    }
+    print $2, "input std_input";
+}} /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/results/lvs/RISC_SPM.lvs.powered.v > /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/results/cvc/RISC_SPM.power"
+
+Wed Dec 08 16:58:04 UTC 2021 - Executing "awk { /Black-box entry subcircuit/ {  # remove black-box defintions
+    while ( $1 != ".ends" ) {
+        getline;
+    }
+    getline;
+}
+/^\*/ {  # remove comments
+    next;
+}
+/^.ENDS .*/ {  # remove name from ends lines
+    print $1;
+    next;
+}
+ {
+    print $0;
+}} /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.ref/sky130_fd_sc_hd/cdl/sky130_fd_sc_hd.cdl /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/results/magic/RISC_SPM.lef.spice > /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/results/cvc/RISC_SPM.cdl"
+
+Wed Dec 08 16:58:04 UTC 2021 - Executing "cvc /openlane/scripts/cvc/sky130A/cvcrc.sky130A |& tee >&@stdout /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/logs/cvc/49-cvc_screen.log"
+
+Wed Dec 08 16:58:05 UTC 2021 - Executing "openroad -python /openlane/scripts/generate_reports.py -d /openlane/designs/RISC_SPM --design_name RISC_SPM --tag RUN_2021.12.08_16.43.47 --output_file /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/final_summary_report.csv --man_report /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/manufacturability_report.rpt --runtime_summary /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/reports/runtime_summary_report.rpt --run_path /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47"
+

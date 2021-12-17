@@ -1,0 +1,178 @@
+OpenROAD GITDIR-NOTFOUND 
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ODB-0222] Reading LEF file: /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/merged_unpadded.lef
+[WARNING ODB-0220] WARNING (LEFPARS-2036): SOURCE statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/merged_unpadded.lef at line 68187.
+
+[INFO ODB-0223]     Created 13 technology layers
+[INFO ODB-0224]     Created 25 technology vias
+[INFO ODB-0225]     Created 441 library cells
+[INFO ODB-0226] Finished LEF file:  /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/merged_unpadded.lef
+[INFO ODB-0127] Reading DEF file: /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/placement/23-resizer_timing.def
+[INFO ODB-0128] Design: RISC_SPM
+[INFO ODB-0130]     Created 36 pins.
+[INFO ODB-0131]     Created 9729 components and 59864 component-terminals.
+[INFO ODB-0132]     Created 2 special nets and 33636 connections.
+[INFO ODB-0133]     Created 6775 nets and 26228 connections.
+[INFO ODB-0134] Finished DEF file: /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/placement/23-resizer_timing.def
+###############################################################################
+# Created by write_sdc
+# Wed Dec  8 16:45:22 2021
+###############################################################################
+current_design RISC_SPM
+###############################################################################
+# Timing Constraints
+###############################################################################
+create_clock -name clk -period 300.0000 [get_ports {clk}]
+set_clock_transition 0.1500 [get_clocks {clk}]
+set_clock_uncertainty 0.2500 clk
+set_propagated_clock [get_clocks {clk}]
+set_input_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {rst}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {address_bus[0]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {address_bus[1]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {address_bus[2]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {address_bus[3]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {address_bus[4]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {address_bus[5]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {address_bus[6]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {address_bus[7]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {data_bus[0]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {data_bus[1]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {data_bus[2]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {data_bus[3]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {data_bus[4]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {data_bus[5]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {data_bus[6]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {data_bus[7]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {instruction_bus[0]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {instruction_bus[1]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {instruction_bus[2]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {instruction_bus[3]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {instruction_bus[4]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {instruction_bus[5]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {instruction_bus[6]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {instruction_bus[7]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {memory_bus[0]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {memory_bus[1]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {memory_bus[2]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {memory_bus[3]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {memory_bus[4]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {memory_bus[5]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {memory_bus[6]}]
+set_output_delay 60.0000 -clock [get_clocks {clk}] -add_delay [get_ports {memory_bus[7]}]
+###############################################################################
+# Environment
+###############################################################################
+set_load -pin_load 0.0334 [get_ports {address_bus[7]}]
+set_load -pin_load 0.0334 [get_ports {address_bus[6]}]
+set_load -pin_load 0.0334 [get_ports {address_bus[5]}]
+set_load -pin_load 0.0334 [get_ports {address_bus[4]}]
+set_load -pin_load 0.0334 [get_ports {address_bus[3]}]
+set_load -pin_load 0.0334 [get_ports {address_bus[2]}]
+set_load -pin_load 0.0334 [get_ports {address_bus[1]}]
+set_load -pin_load 0.0334 [get_ports {address_bus[0]}]
+set_load -pin_load 0.0334 [get_ports {data_bus[7]}]
+set_load -pin_load 0.0334 [get_ports {data_bus[6]}]
+set_load -pin_load 0.0334 [get_ports {data_bus[5]}]
+set_load -pin_load 0.0334 [get_ports {data_bus[4]}]
+set_load -pin_load 0.0334 [get_ports {data_bus[3]}]
+set_load -pin_load 0.0334 [get_ports {data_bus[2]}]
+set_load -pin_load 0.0334 [get_ports {data_bus[1]}]
+set_load -pin_load 0.0334 [get_ports {data_bus[0]}]
+set_load -pin_load 0.0334 [get_ports {instruction_bus[7]}]
+set_load -pin_load 0.0334 [get_ports {instruction_bus[6]}]
+set_load -pin_load 0.0334 [get_ports {instruction_bus[5]}]
+set_load -pin_load 0.0334 [get_ports {instruction_bus[4]}]
+set_load -pin_load 0.0334 [get_ports {instruction_bus[3]}]
+set_load -pin_load 0.0334 [get_ports {instruction_bus[2]}]
+set_load -pin_load 0.0334 [get_ports {instruction_bus[1]}]
+set_load -pin_load 0.0334 [get_ports {instruction_bus[0]}]
+set_load -pin_load 0.0334 [get_ports {memory_bus[7]}]
+set_load -pin_load 0.0334 [get_ports {memory_bus[6]}]
+set_load -pin_load 0.0334 [get_ports {memory_bus[5]}]
+set_load -pin_load 0.0334 [get_ports {memory_bus[4]}]
+set_load -pin_load 0.0334 [get_ports {memory_bus[3]}]
+set_load -pin_load 0.0334 [get_ports {memory_bus[2]}]
+set_load -pin_load 0.0334 [get_ports {memory_bus[1]}]
+set_load -pin_load 0.0334 [get_ports {memory_bus[0]}]
+set_driving_cell -lib_cell sky130_fd_sc_hd__inv_1 -pin {Y} -input_transition_rise 0.0000 -input_transition_fall 0.0000 [get_ports {clk}]
+set_driving_cell -lib_cell sky130_fd_sc_hd__inv_1 -pin {Y} -input_transition_rise 0.0000 -input_transition_fall 0.0000 [get_ports {rst}]
+set_timing_derate -early 0.9000
+set_timing_derate -late 1.1000
+###############################################################################
+# Design Rules
+###############################################################################
+set_max_fanout 5.0000 [current_design]
+[INFO GRT-0020] Min routing layer: li1
+[INFO GRT-0021] Max routing layer: met5
+[INFO GRT-0022] Global adjustment: 0%
+[INFO GRT-0023] Grid origin: (0, 0)
+[WARNING GRT-0043] No OR_DEFAULT vias defined.
+[INFO GRT-0224] Chose via L1M1_PR as default.
+[INFO GRT-0224] Chose via M1M2_PR as default.
+[INFO GRT-0224] Chose via M2M3_PR as default.
+[INFO GRT-0224] Chose via M3M4_PR as default.
+[INFO GRT-0224] Chose via M4M5_PR as default.
+[INFO GRT-0088] Layer li1     Track-Pitch = 0.4600  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met1    Track-Pitch = 0.3400  line-2-Via Pitch: 0.3400
+[INFO GRT-0088] Layer met2    Track-Pitch = 0.4600  line-2-Via Pitch: 0.3500
+[INFO GRT-0088] Layer met3    Track-Pitch = 0.6800  line-2-Via Pitch: 0.6150
+[INFO GRT-0088] Layer met4    Track-Pitch = 0.9200  line-2-Via Pitch: 1.0400
+[INFO GRT-0088] Layer met5    Track-Pitch = 3.4000  line-2-Via Pitch: 3.1100
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0004] Blockages: 302173
+[INFO GRT-0019] Found 199 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 172
+[INFO GRT-0017] Processing 318012 blockages on layer li1.
+[INFO GRT-0017] Processing 64799 blockages on layer met1.
+[INFO GRT-0017] Processing 6 blockages on layer met4.
+[INFO GRT-0017] Processing 6 blockages on layer met5.
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+li1        Vertical        61425         54992          10.47%
+met1       Horizontal      81900         61056          25.45%
+met2       Vertical        61425         61184          0.39%
+met3       Horizontal      40950         40486          1.13%
+met4       Vertical        24570         24332          0.97%
+met5       Horizontal       8190          7998          2.34%
+---------------------------------------------------------------
+
+[INFO GRT-0111] Final number of vias: 19398
+[INFO GRT-0112] Final usage 3D: 99432
+[WARNING GRT-0211] dbGcellGrid already exists in db. Clearing existing dbGCellGrid.
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+li1              54992         15927           28.96%             0 /  0 /  0
+met1             61056         19176           31.41%             0 /  0 /  0
+met2             61184          5391            8.81%             0 /  0 /  0
+met3             40486           744            1.84%             0 /  0 /  0
+met4             24332             0            0.00%             0 /  0 /  0
+met5              7998             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total           250048         41238           16.49%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 438474 um
+[INFO]: Setting RC values...
+[WARNING RSZ-0021] no estimated parasitics. Using wire load models.
+[INFO RSZ-0033] No hold violations found.
+Placement Analysis
+---------------------------------
+total displacement          0.0 u
+average displacement        0.0 u
+max displacement            0.0 u
+original HPWL          224517.8 u
+legalized HPWL         231951.2 u
+delta HPWL                    3 %
+
+[INFO DPL-0020] Mirrored 2977 instances
+[INFO DPL-0021] HPWL before          231951.2 u
+[INFO DPL-0022] HPWL after           224517.8 u
+[INFO DPL-0023] HPWL delta               -3.2 %

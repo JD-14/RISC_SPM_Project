@@ -1,0 +1,1903 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Wolf <claire@symbioticeda.com>          |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9+4052 (git sha1 UNKNOWN, gcc 8.3.1 -fPIC -Os)
+
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Verilog-2005 frontend: /openlane/designs/RISC_SPM/src/RISC_SPM.v
+Parsing SystemVerilog input from `/openlane/designs/RISC_SPM/src/RISC_SPM.v' to AST representation.
+Generating RTLIL representation for module `\RISC_SPM'.
+Generating RTLIL representation for module `\Processing_Unit'.
+Generating RTLIL representation for module `\Register_Unit'.
+Generating RTLIL representation for module `\D_flop'.
+Generating RTLIL representation for module `\Address_Register'.
+Generating RTLIL representation for module `\Instruction_Register'.
+Generating RTLIL representation for module `\Program_Counter'.
+Generating RTLIL representation for module `\Multiplexer_5ch'.
+Generating RTLIL representation for module `\Multiplexer_3ch'.
+Generating RTLIL representation for module `\Alu_RISC'.
+Note: Assuming pure combinatorial block at /openlane/designs/RISC_SPM/src/RISC_SPM.v:203.3-211.13 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Generating RTLIL representation for module `\Control_Unit'.
+Note: Assuming pure combinatorial block at /openlane/designs/RISC_SPM/src/RISC_SPM.v:269.3-414.7 in
+compliance with IEC 62142(E):2005 / IEEE Std. 1364.1(E):2002. Recommending
+use of @* instead of @(...) for better match of synthesis and simulation.
+Generating RTLIL representation for module `\Memory_Unit'.
+Successfully finished Verilog frontend.
+
+2. Generating Graphviz representation of design.
+Writing dot description to `/openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/synthesis/hierarchy.dot'.
+Dumping module RISC_SPM to page 1.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \RISC_SPM
+Used module:     \Memory_Unit
+Used module:     \Control_Unit
+Used module:     \Processing_Unit
+Used module:         \Alu_RISC
+Used module:         \Multiplexer_3ch
+Used module:         \Multiplexer_5ch
+Used module:         \Program_Counter
+Used module:         \Instruction_Register
+Used module:         \Address_Register
+Used module:         \D_flop
+Used module:         \Register_Unit
+
+3.2. Analyzing design hierarchy..
+Top module:  \RISC_SPM
+Used module:     \Memory_Unit
+Used module:     \Control_Unit
+Used module:     \Processing_Unit
+Used module:         \Alu_RISC
+Used module:         \Multiplexer_3ch
+Used module:         \Multiplexer_5ch
+Used module:         \Program_Counter
+Used module:         \Instruction_Register
+Used module:         \Address_Register
+Used module:         \D_flop
+Used module:         \Register_Unit
+Removed 0 unused modules.
+Mapping positional arguments of cell Processing_Unit.ALU (Alu_RISC).
+Mapping positional arguments of cell Processing_Unit.Mux_2 (Multiplexer_3ch).
+Mapping positional arguments of cell Processing_Unit.Mux_1 (Multiplexer_5ch).
+Mapping positional arguments of cell Processing_Unit.PC (Program_Counter).
+Mapping positional arguments of cell Processing_Unit.IR (Instruction_Register).
+Mapping positional arguments of cell Processing_Unit.Add_R (Address_Register).
+Mapping positional arguments of cell Processing_Unit.Reg_Z (D_flop).
+Mapping positional arguments of cell Processing_Unit.Reg_Y (Register_Unit).
+Mapping positional arguments of cell Processing_Unit.R3 (Register_Unit).
+Mapping positional arguments of cell Processing_Unit.R2 (Register_Unit).
+Mapping positional arguments of cell Processing_Unit.R1 (Register_Unit).
+Mapping positional arguments of cell Processing_Unit.R0 (Register_Unit).
+Mapping positional arguments of cell RISC_SPM.M1_Controller (Control_Unit).
+Mapping positional arguments of cell RISC_SPM.M0_Processor (Processing_Unit).
+
+4. Executing TRIBUF pass.
+
+5. Executing SYNTH pass.
+
+5.1. Executing HIERARCHY pass (managing design hierarchy).
+
+5.1.1. Analyzing design hierarchy..
+Top module:  \RISC_SPM
+Used module:     \Memory_Unit
+Used module:     \Control_Unit
+Used module:     \Processing_Unit
+Used module:         \Alu_RISC
+Used module:         \Multiplexer_3ch
+Used module:         \Multiplexer_5ch
+Used module:         \Program_Counter
+Used module:         \Instruction_Register
+Used module:         \Address_Register
+Used module:         \D_flop
+Used module:         \Register_Unit
+
+5.1.2. Analyzing design hierarchy..
+Top module:  \RISC_SPM
+Used module:     \Memory_Unit
+Used module:     \Control_Unit
+Used module:     \Processing_Unit
+Used module:         \Alu_RISC
+Used module:         \Multiplexer_3ch
+Used module:         \Multiplexer_5ch
+Used module:         \Program_Counter
+Used module:         \Instruction_Register
+Used module:         \Address_Register
+Used module:         \D_flop
+Used module:         \Register_Unit
+Removed 0 unused modules.
+
+5.2. Executing PROC pass (convert processes to netlists).
+
+5.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:431$60 in module Memory_Unit.
+Removed 6 dead cases from process $proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56 in module Control_Unit.
+Marked 9 switch rules as full_case in process $proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56 in module Control_Unit.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:265$54 in module Control_Unit.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:203$39 in module Alu_RISC.
+Marked 2 switch rules as full_case in process $proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:142$10 in module Program_Counter.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:129$8 in module Instruction_Register.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:116$6 in module Address_Register.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:104$3 in module D_flop.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:92$1 in module Register_Unit.
+Removed a total of 6 dead cases.
+
+5.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 25 assignments to connections.
+
+5.2.4. Executing PROC_INIT pass (extract init attributes).
+
+5.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \rst in `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:265$54'.
+Found async reset \rst in `\Program_Counter.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:142$10'.
+Found async reset \rst in `\Instruction_Register.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:129$8'.
+Found async reset \rst in `\Address_Register.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:116$6'.
+Found async reset \rst in `\D_flop.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:104$3'.
+Found async reset \rst in `\Register_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:92$1'.
+
+5.2.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\Memory_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:431$60'.
+     1/3: $1$memwr$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:432$58_EN[7:0]$66
+     2/3: $1$memwr$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:432$58_DATA[7:0]$65
+     3/3: $1$memwr$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:432$58_ADDR[7:0]$64
+Creating decoders for process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+     1/77: $6\Sel_R0[0:0]
+     2/77: $8\err_flag[0:0]
+     3/77: $6\Sel_R3[0:0]
+     4/77: $6\Sel_R2[0:0]
+     5/77: $6\Sel_R1[0:0]
+     6/77: $5\Load_R0[0:0]
+     7/77: $7\err_flag[0:0]
+     8/77: $5\Load_R3[0:0]
+     9/77: $5\Load_R2[0:0]
+    10/77: $5\Load_R1[0:0]
+    11/77: $4\Load_R0[0:0]
+    12/77: $5\Sel_R0[0:0]
+    13/77: $6\err_flag[0:0]
+    14/77: $5\Sel_R3[0:0]
+    15/77: $5\Sel_R2[0:0]
+    16/77: $5\Sel_R1[0:0]
+    17/77: $4\Load_R3[0:0]
+    18/77: $4\Load_R2[0:0]
+    19/77: $4\Load_R1[0:0]
+    20/77: $3\Load_Add_R[0:0]
+    21/77: $3\Sel_Bus_1[0:0]
+    22/77: $3\Sel_PC[0:0]
+    23/77: $3\next_state[3:0]
+    24/77: $3\Inc_PC[0:0]
+    25/77: $3\Load_R0[0:0]
+    26/77: $5\err_flag[0:0]
+    27/77: $3\Load_R3[0:0]
+    28/77: $3\Load_R2[0:0]
+    29/77: $3\Load_R1[0:0]
+    30/77: $4\Sel_R0[0:0]
+    31/77: $4\err_flag[0:0]
+    32/77: $4\Sel_R3[0:0]
+    33/77: $4\Sel_R2[0:0]
+    34/77: $4\Sel_R1[0:0]
+    35/77: $3\Sel_R0[0:0]
+    36/77: $3\err_flag[0:0]
+    37/77: $3\Sel_R3[0:0]
+    38/77: $3\Sel_R2[0:0]
+    39/77: $3\Sel_R1[0:0]
+    40/77: $2\next_state[3:0]
+    41/77: $2\err_flag[0:0]
+    42/77: $2\Sel_PC[0:0]
+    43/77: $2\Sel_R3[0:0]
+    44/77: $2\Sel_R2[0:0]
+    45/77: $2\Sel_R1[0:0]
+    46/77: $2\Sel_R0[0:0]
+    47/77: $2\Sel_Bus_1[0:0]
+    48/77: $2\Sel_ALU[0:0]
+    49/77: $2\Load_Reg_Z[0:0]
+    50/77: $2\Load_Reg_Y[0:0]
+    51/77: $2\Load_Add_R[0:0]
+    52/77: $2\Inc_PC[0:0]
+    53/77: $2\Load_R3[0:0]
+    54/77: $2\Load_R2[0:0]
+    55/77: $2\Load_R1[0:0]
+    56/77: $2\Load_R0[0:0]
+    57/77: $1\next_state[3:0]
+    58/77: $1\err_flag[0:0]
+    59/77: $1\Sel_PC[0:0]
+    60/77: $1\Sel_R3[0:0]
+    61/77: $1\Sel_R2[0:0]
+    62/77: $1\Sel_R1[0:0]
+    63/77: $1\Sel_R0[0:0]
+    64/77: $1\Sel_Mem[0:0]
+    65/77: $1\Sel_Bus_1[0:0]
+    66/77: $1\Sel_ALU[0:0]
+    67/77: $1\write[0:0]
+    68/77: $1\Load_Reg_Z[0:0]
+    69/77: $1\Load_Reg_Y[0:0]
+    70/77: $1\Load_Add_R[0:0]
+    71/77: $1\Load_IR[0:0]
+    72/77: $1\Inc_PC[0:0]
+    73/77: $1\Load_PC[0:0]
+    74/77: $1\Load_R3[0:0]
+    75/77: $1\Load_R2[0:0]
+    76/77: $1\Load_R1[0:0]
+    77/77: $1\Load_R0[0:0]
+Creating decoders for process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:265$54'.
+     1/1: $0\state[3:0]
+Creating decoders for process `\Alu_RISC.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:203$39'.
+     1/1: $1\alu_out[7:0]
+Creating decoders for process `\Program_Counter.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:142$10'.
+     1/1: $0\count[7:0]
+Creating decoders for process `\Instruction_Register.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:129$8'.
+     1/1: $0\data_out[7:0]
+Creating decoders for process `\Address_Register.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:116$6'.
+     1/1: $0\data_out[7:0]
+Creating decoders for process `\D_flop.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:104$3'.
+     1/1: $0\data_out[0:0]
+Creating decoders for process `\Register_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:92$1'.
+     1/1: $0\data_out[7:0]
+
+5.2.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\Control_Unit.\Load_R0' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Load_R1' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Load_R2' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Load_R3' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Load_PC' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Inc_PC' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Load_IR' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Load_Add_R' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Load_Reg_Y' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Load_Reg_Z' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\write' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\next_state' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Sel_ALU' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Sel_Bus_1' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Sel_Mem' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Sel_R0' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Sel_R1' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Sel_R2' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Sel_R3' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\Sel_PC' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Control_Unit.\err_flag' from process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+No latch inferred for signal `\Alu_RISC.\alu_out' from process `\Alu_RISC.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:203$39'.
+
+5.2.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\Memory_Unit.$memwr$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:432$58_ADDR' using process `\Memory_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:431$60'.
+  created $dff cell `$procdff$1288' with positive edge clock.
+Creating register for signal `\Memory_Unit.$memwr$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:432$58_DATA' using process `\Memory_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:431$60'.
+  created $dff cell `$procdff$1289' with positive edge clock.
+Creating register for signal `\Memory_Unit.$memwr$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:432$58_EN' using process `\Memory_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:431$60'.
+  created $dff cell `$procdff$1290' with positive edge clock.
+Creating register for signal `\Control_Unit.\state' using process `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:265$54'.
+  created $adff cell `$procdff$1291' with positive edge clock and negative level reset.
+Creating register for signal `\Program_Counter.\count' using process `\Program_Counter.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:142$10'.
+  created $adff cell `$procdff$1292' with positive edge clock and negative level reset.
+Creating register for signal `\Instruction_Register.\data_out' using process `\Instruction_Register.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:129$8'.
+  created $adff cell `$procdff$1293' with positive edge clock and negative level reset.
+Creating register for signal `\Address_Register.\data_out' using process `\Address_Register.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:116$6'.
+  created $adff cell `$procdff$1294' with positive edge clock and negative level reset.
+Creating register for signal `\D_flop.\data_out' using process `\D_flop.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:104$3'.
+  created $adff cell `$procdff$1295' with positive edge clock and negative level reset.
+Creating register for signal `\Register_Unit.\data_out' using process `\Register_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:92$1'.
+  created $adff cell `$procdff$1296' with positive edge clock and negative level reset.
+
+5.2.9. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.2.10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\Memory_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:431$60'.
+Removing empty process `Memory_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:431$60'.
+Found and cleaned up 9 empty switches in `\Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+Removing empty process `Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:269$56'.
+Removing empty process `Control_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:265$54'.
+Found and cleaned up 1 empty switch in `\Alu_RISC.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:203$39'.
+Removing empty process `Alu_RISC.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:203$39'.
+Found and cleaned up 2 empty switches in `\Program_Counter.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:142$10'.
+Removing empty process `Program_Counter.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:142$10'.
+Found and cleaned up 1 empty switch in `\Instruction_Register.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:129$8'.
+Removing empty process `Instruction_Register.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:129$8'.
+Found and cleaned up 1 empty switch in `\Address_Register.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:116$6'.
+Removing empty process `Address_Register.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:116$6'.
+Found and cleaned up 1 empty switch in `\D_flop.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:104$3'.
+Removing empty process `D_flop.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:104$3'.
+Found and cleaned up 1 empty switch in `\Register_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:92$1'.
+Removing empty process `Register_Unit.$proc$/openlane/designs/RISC_SPM/src/RISC_SPM.v:92$1'.
+Cleaned up 17 empty switches.
+
+5.3. Executing FLATTEN pass (flatten design).
+Deleting now unused module Memory_Unit.
+Deleting now unused module Control_Unit.
+Deleting now unused module Alu_RISC.
+Deleting now unused module Multiplexer_3ch.
+Deleting now unused module Multiplexer_5ch.
+Deleting now unused module Program_Counter.
+Deleting now unused module Instruction_Register.
+Deleting now unused module Address_Register.
+Deleting now unused module D_flop.
+Deleting now unused module Register_Unit.
+Deleting now unused module Processing_Unit.
+<suppressed ~15 debug messages>
+
+5.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+<suppressed ~52 debug messages>
+
+5.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+Removed 77 unused cells and 243 unused wires.
+<suppressed ~87 debug messages>
+
+5.6. Executing CHECK pass (checking for obvious problems).
+Checking module RISC_SPM...
+Found and reported 0 problems.
+
+5.7. Executing OPT pass (performing simple optimizations).
+
+5.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+
+5.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+<suppressed ~855 debug messages>
+Removed a total of 285 cells.
+
+5.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \RISC_SPM..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$1014.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$476.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$478.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$1032.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$499.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$501.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$522.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$1050.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$524.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$545.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$1068.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$547.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$129.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$107.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$591.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$593.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$141.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$614.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$616.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$165.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$637.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$639.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$661.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$177.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$663.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$189.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$709.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$409.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$711.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$204.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$733.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$735.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$219.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$757.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$759.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$249.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$779.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$264.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$815.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$279.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$834.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$85.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$294.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$853.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$309.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$872.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$430.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$118.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$891.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$324.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$339.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$341.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$356.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$910.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$358.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$928.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$946.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$373.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$432.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$375.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$965.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$390.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$392.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$982.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$407.
+    dead port 2/2 on $mux $flatten\M1_Controller.$procmux$996.
+Removed 66 multiplexer ports.
+<suppressed ~37 debug messages>
+
+5.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \RISC_SPM.
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$184: { $flatten\M1_Controller.$procmux$139_CMP $auto$opt_reduce.cc:134:opt_mux$1299 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$471: { $auto$opt_reduce.cc:134:opt_mux$1301 $flatten\M1_Controller.$procmux$137_CMP }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$704: { $auto$opt_reduce.cc:134:opt_mux$1303 $flatten\M1_Controller.$procmux$103_CMP }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$199: { $flatten\M1_Controller.$procmux$140_CMP $auto$opt_reduce.cc:134:opt_mux$1305 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$540: { $flatten\M1_Controller.$procmux$106_CMP $auto$opt_reduce.cc:134:opt_mux$1307 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$728: { $flatten\M1_Controller.$procmux$104_CMP $auto$opt_reduce.cc:134:opt_mux$1309 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$214: { $flatten\M1_Controller.$procmux$140_CMP $auto$opt_reduce.cc:134:opt_mux$1311 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$752: { $flatten\M1_Controller.$procmux$105_CMP $auto$opt_reduce.cc:134:opt_mux$1313 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$244: { $auto$opt_reduce.cc:134:opt_mux$1315 $flatten\M1_Controller.$procmux$137_CMP }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$425: { $flatten\M1_Controller.$procmux$140_CMP $auto$opt_reduce.cc:134:opt_mux$1317 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$494: { $flatten\M1_Controller.$procmux$138_CMP $auto$opt_reduce.cc:134:opt_mux$1319 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$113: { $flatten\M1_Controller.$procmux$104_CMP $auto$opt_reduce.cc:134:opt_mux$1321 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$771: { $flatten\M1_Controller.$procmux$662_CTRL $auto$opt_reduce.cc:134:opt_mux$1323 $flatten\M1_Controller.$procmux$775_CMP $flatten\M1_Controller.$procmux$774_CMP $flatten\M1_Controller.$procmux$773_CMP $flatten\M1_Controller.$procmux$340_CMP }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$124: { $flatten\M1_Controller.$procmux$105_CMP $auto$opt_reduce.cc:134:opt_mux$1325 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$259: { $flatten\M1_Controller.$procmux$138_CMP $auto$opt_reduce.cc:134:opt_mux$1327 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$80: { $flatten\M1_Controller.$procmux$106_CMP $auto$opt_reduce.cc:134:opt_mux$1329 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$810: { $auto$opt_reduce.cc:134:opt_mux$1331 $flatten\M1_Controller.$procmux$340_CMP }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$1139: $auto$opt_reduce.cc:134:opt_mux$1333
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$586: { $auto$opt_reduce.cc:134:opt_mux$1335 $flatten\M1_Controller.$procmux$103_CMP }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$274: { $flatten\M1_Controller.$procmux$139_CMP $auto$opt_reduce.cc:134:opt_mux$1337 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$289: { $auto$opt_reduce.cc:134:opt_mux$1339 $flatten\M1_Controller.$procmux$137_CMP }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$136: { $flatten\M1_Controller.$procmux$140_CMP $auto$opt_reduce.cc:134:opt_mux$1341 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$304: { $flatten\M1_Controller.$procmux$138_CMP $auto$opt_reduce.cc:134:opt_mux$1343 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$1224: { $flatten\M1_Controller.$procmux$1015_CMP $auto$opt_reduce.cc:134:opt_mux$1345 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$319: { $flatten\M1_Controller.$procmux$139_CMP $auto$opt_reduce.cc:134:opt_mux$1347 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$609: { $flatten\M1_Controller.$procmux$104_CMP $auto$opt_reduce.cc:134:opt_mux$1349 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$903: { $auto$opt_reduce.cc:134:opt_mux$1351 $flatten\M1_Controller.$procmux$340_CMP }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$1071: { $flatten\M1_Controller.$procmux$1082_CMP $flatten\M1_Controller.$procmux$1081_CMP $flatten\M1_Controller.$procmux$1015_CMP $flatten\M1_Controller.$procmux$1078_CMP $flatten\M1_Controller.$procmux$1077_CMP $flatten\M1_Controller.$procmux$1074_CMP $auto$opt_reduce.cc:134:opt_mux$1353 $flatten\M1_Controller.$procmux$1072_CMP }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$102: { $auto$opt_reduce.cc:134:opt_mux$1355 $flatten\M1_Controller.$procmux$103_CMP }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$160: { $auto$opt_reduce.cc:134:opt_mux$1357 $flatten\M1_Controller.$procmux$137_CMP }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$632: { $flatten\M1_Controller.$procmux$105_CMP $auto$opt_reduce.cc:134:opt_mux$1359 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$517: { $flatten\M1_Controller.$procmux$139_CMP $auto$opt_reduce.cc:134:opt_mux$1361 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$1200: { $flatten\M1_Controller.$procmux$1015_CMP $auto$opt_reduce.cc:134:opt_mux$1363 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$977: { $auto$opt_reduce.cc:134:opt_mux$1365 $flatten\M1_Controller.$procmux$340_CMP }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$172: { $flatten\M1_Controller.$procmux$138_CMP $auto$opt_reduce.cc:134:opt_mux$1367 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$656: { $flatten\M1_Controller.$procmux$106_CMP $auto$opt_reduce.cc:134:opt_mux$1369 }
+    Consolidated identical input bits for $mux cell $flatten\M2_SRAM.$procmux$68:
+      Old ports: A=8'00000000, B=8'11111111, Y=$flatten\M2_SRAM.$0$memwr$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:432$58_EN[7:0]$63
+      New ports: A=1'0, B=1'1, Y=$flatten\M2_SRAM.$0$memwr$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:432$58_EN[7:0]$63 [0]
+      New connections: $flatten\M2_SRAM.$0$memwr$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:432$58_EN[7:0]$63 [7:1] = { $flatten\M2_SRAM.$0$memwr$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:432$58_EN[7:0]$63 [0] $flatten\M2_SRAM.$0$memwr$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:432$58_EN[7:0]$63 [0] $flatten\M2_SRAM.$0$memwr$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:432$58_EN[7:0]$63 [0] $flatten\M2_SRAM.$0$memwr$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:432$58_EN[7:0]$63 [0] $flatten\M2_SRAM.$0$memwr$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:432$58_EN[7:0]$63 [0] $flatten\M2_SRAM.$0$memwr$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:432$58_EN[7:0]$63 [0] $flatten\M2_SRAM.$0$memwr$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:432$58_EN[7:0]$63 [0] }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:128:opt_mux$1350: { $flatten\M1_Controller.$procmux$773_CMP $flatten\M1_Controller.$procmux$774_CMP $flatten\M1_Controller.$procmux$775_CMP $flatten\M0_Processor.\ALU.$procmux$1274_CMP $flatten\M0_Processor.\ALU.$procmux$1273_CMP $flatten\M0_Processor.\ALU.$procmux$1272_CMP $flatten\M0_Processor.\ALU.$procmux$1271_CMP }
+  Optimizing cells in module \RISC_SPM.
+Performed a total of 38 changes.
+
+5.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+<suppressed ~138 debug messages>
+Removed a total of 46 cells.
+
+5.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+Removed 0 unused cells and 374 unused wires.
+<suppressed ~1 debug messages>
+
+5.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+
+5.7.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.7.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \RISC_SPM..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~46 debug messages>
+
+5.7.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \RISC_SPM.
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$1238: { $flatten\M1_Controller.$procmux$1015_CMP $auto$opt_reduce.cc:134:opt_mux$1371 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$1247: { $flatten\M1_Controller.$procmux$1015_CMP $auto$opt_reduce.cc:134:opt_mux$1373 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$1256: { $flatten\M1_Controller.$procmux$1015_CMP $auto$opt_reduce.cc:134:opt_mux$1375 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$1265: { $flatten\M1_Controller.$procmux$1015_CMP $auto$opt_reduce.cc:134:opt_mux$1377 }
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$831: $auto$opt_reduce.cc:134:opt_mux$1379
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$850: $auto$opt_reduce.cc:134:opt_mux$1381
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$869: $auto$opt_reduce.cc:134:opt_mux$1383
+    New ctrl vector for $pmux cell $flatten\M1_Controller.$procmux$888: $auto$opt_reduce.cc:134:opt_mux$1385
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:128:opt_mux$1378: { $flatten\M0_Processor.\ALU.$procmux$1274_CMP $flatten\M0_Processor.\ALU.$procmux$1273_CMP $flatten\M0_Processor.\ALU.$procmux$1272_CMP $flatten\M0_Processor.\ALU.$procmux$1271_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:128:opt_mux$1380: { $flatten\M0_Processor.\ALU.$procmux$1274_CMP $flatten\M0_Processor.\ALU.$procmux$1273_CMP $flatten\M0_Processor.\ALU.$procmux$1272_CMP $flatten\M0_Processor.\ALU.$procmux$1271_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:128:opt_mux$1382: { $flatten\M0_Processor.\ALU.$procmux$1274_CMP $flatten\M0_Processor.\ALU.$procmux$1273_CMP $flatten\M0_Processor.\ALU.$procmux$1272_CMP $flatten\M0_Processor.\ALU.$procmux$1271_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:128:opt_mux$1384: { $flatten\M0_Processor.\ALU.$procmux$1274_CMP $flatten\M0_Processor.\ALU.$procmux$1273_CMP $flatten\M0_Processor.\ALU.$procmux$1272_CMP $flatten\M0_Processor.\ALU.$procmux$1271_CMP }
+  Optimizing cells in module \RISC_SPM.
+Performed a total of 12 changes.
+
+5.7.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+5.7.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.7.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+5.7.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+
+5.7.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.7.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \RISC_SPM..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~46 debug messages>
+
+5.7.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \RISC_SPM.
+Performed a total of 0 changes.
+
+5.7.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+Removed a total of 0 cells.
+
+5.7.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.7.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+
+5.7.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+
+5.7.23. Finished OPT passes. (There is nothing left to do.)
+
+5.8. Executing FSM pass (extract and optimize FSM).
+
+5.8.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking RISC_SPM.M1_Controller.state as FSM state register:
+    Circuit seems to be self-resetting.
+
+5.8.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+5.8.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.8.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+
+5.8.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.8.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+5.8.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+5.8.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+5.9. Executing OPT pass (performing simple optimizations).
+
+5.9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+
+5.9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+Removed a total of 0 cells.
+
+5.9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \RISC_SPM..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~46 debug messages>
+
+5.9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \RISC_SPM.
+Performed a total of 0 changes.
+
+5.9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+Removed a total of 0 cells.
+
+5.9.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $flatten\M0_Processor.\Reg_Z.$procdff$1295 ($adff) from module RISC_SPM (D = \M0_Processor.Reg_Z.data_in, Q = \M0_Processor.Reg_Z.data_out).
+Adding EN signal on $flatten\M0_Processor.\Reg_Y.$procdff$1296 ($adff) from module RISC_SPM (D = \M0_Processor.Add_R.data_in, Q = \M0_Processor.Reg_Y.data_out).
+Adding EN signal on $flatten\M0_Processor.\R3.$procdff$1296 ($adff) from module RISC_SPM (D = \M0_Processor.Add_R.data_in, Q = \M0_Processor.R3.data_out).
+Adding EN signal on $flatten\M0_Processor.\R2.$procdff$1296 ($adff) from module RISC_SPM (D = \M0_Processor.Add_R.data_in, Q = \M0_Processor.R2.data_out).
+Adding EN signal on $flatten\M0_Processor.\R1.$procdff$1296 ($adff) from module RISC_SPM (D = \M0_Processor.Add_R.data_in, Q = \M0_Processor.R1.data_out).
+Adding EN signal on $flatten\M0_Processor.\R0.$procdff$1296 ($adff) from module RISC_SPM (D = \M0_Processor.Add_R.data_in, Q = \M0_Processor.R0.data_out).
+Adding EN signal on $flatten\M0_Processor.\PC.$procdff$1292 ($adff) from module RISC_SPM (D = $flatten\M0_Processor.\PC.$0\count[7:0], Q = \M0_Processor.PC.count).
+Adding EN signal on $flatten\M0_Processor.\IR.$procdff$1293 ($adff) from module RISC_SPM (D = \M0_Processor.Add_R.data_in, Q = \M0_Processor.IR.data_out).
+Adding EN signal on $flatten\M0_Processor.\Add_R.$procdff$1294 ($adff) from module RISC_SPM (D = \M0_Processor.Add_R.data_in, Q = \M0_Processor.Add_R.data_out).
+
+5.9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+Removed 8 unused cells and 8 unused wires.
+<suppressed ~9 debug messages>
+
+5.9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+<suppressed ~1 debug messages>
+
+5.9.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.9.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \RISC_SPM..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~38 debug messages>
+
+5.9.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \RISC_SPM.
+Performed a total of 0 changes.
+
+5.9.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+Removed a total of 0 cells.
+
+5.9.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.9.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+
+5.9.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+
+5.9.16. Finished OPT passes. (There is nothing left to do.)
+
+5.10. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 4) from port B of cell RISC_SPM.$flatten\M0_Processor.\ALU.$procmux$1271_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell RISC_SPM.$flatten\M0_Processor.\ALU.$procmux$1272_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell RISC_SPM.$flatten\M0_Processor.\ALU.$procmux$1273_CMP0 ($eq).
+Removed top 3 bits (of 4) from port B of cell RISC_SPM.$flatten\M0_Processor.\ALU.$procmux$1274_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell RISC_SPM.$flatten\M0_Processor.\Mux_2.$eq$/openlane/designs/RISC_SPM/src/RISC_SPM.v:165$29 ($eq).
+Removed cell RISC_SPM.$flatten\M0_Processor.\Mux_2.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:165$32 ($mux).
+Removed top 24 bits (of 32) from mux cell RISC_SPM.$flatten\M0_Processor.\Mux_2.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:165$34 ($mux).
+Removed top 24 bits (of 32) from mux cell RISC_SPM.$flatten\M0_Processor.\Mux_2.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:165$36 ($mux).
+Removed top 2 bits (of 3) from port B of cell RISC_SPM.$flatten\M0_Processor.\Mux_1.$eq$/openlane/designs/RISC_SPM/src/RISC_SPM.v:152$14 ($eq).
+Removed top 1 bits (of 3) from port B of cell RISC_SPM.$flatten\M0_Processor.\Mux_1.$eq$/openlane/designs/RISC_SPM/src/RISC_SPM.v:153$15 ($eq).
+Removed top 1 bits (of 3) from port B of cell RISC_SPM.$flatten\M0_Processor.\Mux_1.$eq$/openlane/designs/RISC_SPM/src/RISC_SPM.v:154$16 ($eq).
+Removed cell RISC_SPM.$flatten\M0_Processor.\Mux_1.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:155$19 ($mux).
+Removed top 24 bits (of 32) from mux cell RISC_SPM.$flatten\M0_Processor.\Mux_1.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:154$21 ($mux).
+Removed top 24 bits (of 32) from mux cell RISC_SPM.$flatten\M0_Processor.\Mux_1.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:153$23 ($mux).
+Removed top 24 bits (of 32) from mux cell RISC_SPM.$flatten\M0_Processor.\Mux_1.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:152$25 ($mux).
+Removed top 24 bits (of 32) from mux cell RISC_SPM.$flatten\M0_Processor.\Mux_1.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:152$27 ($mux).
+Removed top 31 bits (of 32) from port B of cell RISC_SPM.$flatten\M0_Processor.\PC.$add$/openlane/designs/RISC_SPM/src/RISC_SPM.v:143$12 ($add).
+Removed top 24 bits (of 32) from port Y of cell RISC_SPM.$flatten\M0_Processor.\PC.$add$/openlane/designs/RISC_SPM/src/RISC_SPM.v:143$12 ($add).
+Removed cell RISC_SPM.$flatten\M0_Processor.\PC.$procmux$1275 ($mux).
+Removed top 3 bits (of 4) from port B of cell RISC_SPM.$flatten\M1_Controller.$procmux$1082_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell RISC_SPM.$flatten\M1_Controller.$procmux$1081_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell RISC_SPM.$flatten\M1_Controller.$procmux$1079_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell RISC_SPM.$flatten\M1_Controller.$procmux$1078_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell RISC_SPM.$flatten\M1_Controller.$procmux$1077_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell RISC_SPM.$flatten\M1_Controller.$procmux$1076_CMP0 ($eq).
+Removed top 2 bits (of 4) from port B of cell RISC_SPM.$flatten\M1_Controller.$procmux$1015_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell RISC_SPM.$flatten\M1_Controller.$procmux$775_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell RISC_SPM.$flatten\M1_Controller.$procmux$774_CMP0 ($eq).
+Removed top 1 bits (of 4) from port B of cell RISC_SPM.$flatten\M1_Controller.$procmux$773_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell RISC_SPM.$flatten\M1_Controller.$procmux$139_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell RISC_SPM.$flatten\M1_Controller.$procmux$105_CMP0 ($eq).
+Removed top 30 bits (of 32) from mux cell RISC_SPM.$flatten\M1_Controller.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:261$53 ($mux).
+Removed top 30 bits (of 32) from mux cell RISC_SPM.$flatten\M1_Controller.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:262$52 ($mux).
+Removed cell RISC_SPM.$flatten\M1_Controller.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:263$51 ($mux).
+Removed top 29 bits (of 32) from mux cell RISC_SPM.$flatten\M1_Controller.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:255$49 ($mux).
+Removed top 29 bits (of 32) from mux cell RISC_SPM.$flatten\M1_Controller.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:256$48 ($mux).
+Removed top 29 bits (of 32) from mux cell RISC_SPM.$flatten\M1_Controller.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:257$47 ($mux).
+Removed top 29 bits (of 32) from mux cell RISC_SPM.$flatten\M1_Controller.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:258$46 ($mux).
+Removed cell RISC_SPM.$flatten\M1_Controller.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:259$45 ($mux).
+Removed cell RISC_SPM.$flatten\M2_SRAM.$procmux$74 ($mux).
+Removed cell RISC_SPM.$flatten\M2_SRAM.$procmux$71 ($mux).
+Removed top 24 bits (of 32) from wire RISC_SPM.$flatten\M0_Processor.\Mux_1.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:152$25_Y.
+Removed top 24 bits (of 32) from wire RISC_SPM.$flatten\M0_Processor.\Mux_1.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:153$23_Y.
+Removed top 24 bits (of 32) from wire RISC_SPM.$flatten\M0_Processor.\Mux_1.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:154$21_Y.
+Removed top 24 bits (of 32) from wire RISC_SPM.$flatten\M0_Processor.\Mux_2.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:165$34_Y.
+Removed top 29 bits (of 32) from wire RISC_SPM.$flatten\M1_Controller.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:256$48_Y.
+Removed top 29 bits (of 32) from wire RISC_SPM.$flatten\M1_Controller.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:257$47_Y.
+Removed top 29 bits (of 32) from wire RISC_SPM.$flatten\M1_Controller.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:258$46_Y.
+
+5.11. Executing PEEPOPT pass (run peephole optimizers).
+
+5.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+Removed 5 unused cells and 23 unused wires.
+<suppressed ~8 debug messages>
+
+5.13. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module RISC_SPM:
+  creating $macc model for $flatten\M0_Processor.\ALU.$add$/openlane/designs/RISC_SPM/src/RISC_SPM.v:206$40 ($add).
+  creating $macc model for $flatten\M0_Processor.\ALU.$sub$/openlane/designs/RISC_SPM/src/RISC_SPM.v:207$41 ($sub).
+  creating $macc model for $flatten\M0_Processor.\PC.$add$/openlane/designs/RISC_SPM/src/RISC_SPM.v:143$12 ($add).
+  creating $alu model for $macc $flatten\M0_Processor.\PC.$add$/openlane/designs/RISC_SPM/src/RISC_SPM.v:143$12.
+  creating $alu model for $macc $flatten\M0_Processor.\ALU.$sub$/openlane/designs/RISC_SPM/src/RISC_SPM.v:207$41.
+  creating $alu model for $macc $flatten\M0_Processor.\ALU.$add$/openlane/designs/RISC_SPM/src/RISC_SPM.v:206$40.
+  creating $alu cell for $flatten\M0_Processor.\ALU.$add$/openlane/designs/RISC_SPM/src/RISC_SPM.v:206$40: $auto$alumacc.cc:485:replace_alu$1404
+  creating $alu cell for $flatten\M0_Processor.\ALU.$sub$/openlane/designs/RISC_SPM/src/RISC_SPM.v:207$41: $auto$alumacc.cc:485:replace_alu$1407
+  creating $alu cell for $flatten\M0_Processor.\PC.$add$/openlane/designs/RISC_SPM/src/RISC_SPM.v:143$12: $auto$alumacc.cc:485:replace_alu$1410
+  created 3 $alu and 0 $macc cells.
+
+5.14. Executing SHARE pass (SAT-based resource sharing).
+
+5.15. Executing OPT pass (performing simple optimizations).
+
+5.15.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+
+5.15.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+Removed a total of 0 cells.
+
+5.15.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \RISC_SPM..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~33 debug messages>
+
+5.15.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \RISC_SPM.
+Performed a total of 0 changes.
+
+5.15.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+Removed a total of 0 cells.
+
+5.15.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.15.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+
+5.15.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+
+5.15.9. Finished OPT passes. (There is nothing left to do.)
+
+5.16. Executing MEMORY pass.
+
+5.16.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+5.16.2. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking cell `$flatten\M2_SRAM.$memrd$\memory$/openlane/designs/RISC_SPM/src/RISC_SPM.v:429$59' in module `\RISC_SPM': no (compatible) $dff found.
+
+5.16.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+
+5.16.4. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+5.16.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+
+5.16.6. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+5.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+
+5.18. Executing OPT pass (performing simple optimizations).
+
+5.18.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+<suppressed ~32 debug messages>
+
+5.18.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+Removed a total of 0 cells.
+
+5.18.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.18.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+Removed 2 unused cells and 11 unused wires.
+<suppressed ~3 debug messages>
+
+5.18.5. Finished fast OPT passes.
+
+5.19. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory \M2_SRAM.memory in module \RISC_SPM:
+  created 256 $dff cells and 0 static cells of width 8.
+  read interface: 0 $dff and 255 $mux cells.
+  write interface: 256 write mux blocks.
+
+5.20. Executing OPT pass (performing simple optimizations).
+
+5.20.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+<suppressed ~16 debug messages>
+
+5.20.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+Removed a total of 0 cells.
+
+5.20.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \RISC_SPM..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~276 debug messages>
+
+5.20.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \RISC_SPM.
+    Consolidated identical input bits for $mux cell $flatten\M1_Controller.$procmux$388:
+      Old ports: A=4'0001, B=4'1001, Y=$flatten\M1_Controller.$3\next_state[3:0]
+      New ports: A=1'0, B=1'1, Y=$flatten\M1_Controller.$3\next_state[3:0] [3]
+      New connections: $flatten\M1_Controller.$3\next_state[3:0] [2:0] = 3'001
+    Consolidated identical input bits for $mux cell $flatten\M1_Controller.$ternary$/openlane/designs/RISC_SPM/src/RISC_SPM.v:258$46:
+      Old ports: A=3'100, B=3'011, Y=$auto$wreduce.cc:454:run$1403 [2:0]
+      New ports: A=2'10, B=2'01, Y={ $auto$wreduce.cc:454:run$1403 [2] $auto$wreduce.cc:454:run$1403 [0] }
+      New connections: $auto$wreduce.cc:454:run$1403 [1] = $auto$wreduce.cc:454:run$1403 [0]
+  Optimizing cells in module \RISC_SPM.
+Performed a total of 2 changes.
+
+5.20.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+Removed a total of 0 cells.
+
+5.20.6. Executing OPT_SHARE pass.
+    Found cells that share an operand and can be merged by moving the $pmux $flatten\M0_Processor.\ALU.$procmux$1270 in front of them:
+        $auto$alumacc.cc:485:replace_alu$1407
+        $auto$alumacc.cc:485:replace_alu$1404
+
+5.20.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.20.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+Removed 0 unused cells and 526 unused wires.
+<suppressed ~1 debug messages>
+
+5.20.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+<suppressed ~2 debug messages>
+
+5.20.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.20.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \RISC_SPM..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~277 debug messages>
+
+5.20.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \RISC_SPM.
+    New ctrl vector for $pmux cell $flatten\M0_Processor.\ALU.$procmux$1270: { $auto$opt_reduce.cc:134:opt_mux$4362 $flatten\M0_Processor.\ALU.$procmux$1272_CMP $flatten\M0_Processor.\ALU.$procmux$1271_CMP }
+  Optimizing cells in module \RISC_SPM.
+Performed a total of 1 changes.
+
+5.20.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+Removed a total of 0 cells.
+
+5.20.14. Executing OPT_SHARE pass.
+
+5.20.15. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $memory\M2_SRAM.memory[9]$1431 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[9]).
+Adding EN signal on $memory\M2_SRAM.memory[99]$1611 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[99]).
+Adding EN signal on $memory\M2_SRAM.memory[98]$1609 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[98]).
+Adding EN signal on $memory\M2_SRAM.memory[97]$1607 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[97]).
+Adding EN signal on $memory\M2_SRAM.memory[96]$1605 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[96]).
+Adding EN signal on $memory\M2_SRAM.memory[95]$1603 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[95]).
+Adding EN signal on $memory\M2_SRAM.memory[94]$1601 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[94]).
+Adding EN signal on $memory\M2_SRAM.memory[93]$1599 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[93]).
+Adding EN signal on $memory\M2_SRAM.memory[92]$1597 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[92]).
+Adding EN signal on $memory\M2_SRAM.memory[91]$1595 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[91]).
+Adding EN signal on $memory\M2_SRAM.memory[90]$1593 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[90]).
+Adding EN signal on $memory\M2_SRAM.memory[8]$1429 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[8]).
+Adding EN signal on $memory\M2_SRAM.memory[89]$1591 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[89]).
+Adding EN signal on $memory\M2_SRAM.memory[88]$1589 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[88]).
+Adding EN signal on $memory\M2_SRAM.memory[87]$1587 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[87]).
+Adding EN signal on $memory\M2_SRAM.memory[86]$1585 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[86]).
+Adding EN signal on $memory\M2_SRAM.memory[85]$1583 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[85]).
+Adding EN signal on $memory\M2_SRAM.memory[84]$1581 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[84]).
+Adding EN signal on $memory\M2_SRAM.memory[83]$1579 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[83]).
+Adding EN signal on $memory\M2_SRAM.memory[82]$1577 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[82]).
+Adding EN signal on $memory\M2_SRAM.memory[81]$1575 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[81]).
+Adding EN signal on $memory\M2_SRAM.memory[80]$1573 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[80]).
+Adding EN signal on $memory\M2_SRAM.memory[7]$1427 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[7]).
+Adding EN signal on $memory\M2_SRAM.memory[79]$1571 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[79]).
+Adding EN signal on $memory\M2_SRAM.memory[78]$1569 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[78]).
+Adding EN signal on $memory\M2_SRAM.memory[77]$1567 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[77]).
+Adding EN signal on $memory\M2_SRAM.memory[76]$1565 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[76]).
+Adding EN signal on $memory\M2_SRAM.memory[75]$1563 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[75]).
+Adding EN signal on $memory\M2_SRAM.memory[74]$1561 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[74]).
+Adding EN signal on $memory\M2_SRAM.memory[73]$1559 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[73]).
+Adding EN signal on $memory\M2_SRAM.memory[72]$1557 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[72]).
+Adding EN signal on $memory\M2_SRAM.memory[71]$1555 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[71]).
+Adding EN signal on $memory\M2_SRAM.memory[70]$1553 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[70]).
+Adding EN signal on $memory\M2_SRAM.memory[6]$1425 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[6]).
+Adding EN signal on $memory\M2_SRAM.memory[69]$1551 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[69]).
+Adding EN signal on $memory\M2_SRAM.memory[68]$1549 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[68]).
+Adding EN signal on $memory\M2_SRAM.memory[67]$1547 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[67]).
+Adding EN signal on $memory\M2_SRAM.memory[66]$1545 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[66]).
+Adding EN signal on $memory\M2_SRAM.memory[65]$1543 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[65]).
+Adding EN signal on $memory\M2_SRAM.memory[64]$1541 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[64]).
+Adding EN signal on $memory\M2_SRAM.memory[63]$1539 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[63]).
+Adding EN signal on $memory\M2_SRAM.memory[62]$1537 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[62]).
+Adding EN signal on $memory\M2_SRAM.memory[61]$1535 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[61]).
+Adding EN signal on $memory\M2_SRAM.memory[60]$1533 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[60]).
+Adding EN signal on $memory\M2_SRAM.memory[5]$1423 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[5]).
+Adding EN signal on $memory\M2_SRAM.memory[59]$1531 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[59]).
+Adding EN signal on $memory\M2_SRAM.memory[58]$1529 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[58]).
+Adding EN signal on $memory\M2_SRAM.memory[57]$1527 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[57]).
+Adding EN signal on $memory\M2_SRAM.memory[56]$1525 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[56]).
+Adding EN signal on $memory\M2_SRAM.memory[55]$1523 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[55]).
+Adding EN signal on $memory\M2_SRAM.memory[54]$1521 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[54]).
+Adding EN signal on $memory\M2_SRAM.memory[53]$1519 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[53]).
+Adding EN signal on $memory\M2_SRAM.memory[52]$1517 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[52]).
+Adding EN signal on $memory\M2_SRAM.memory[51]$1515 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[51]).
+Adding EN signal on $memory\M2_SRAM.memory[50]$1513 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[50]).
+Adding EN signal on $memory\M2_SRAM.memory[4]$1421 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[4]).
+Adding EN signal on $memory\M2_SRAM.memory[49]$1511 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[49]).
+Adding EN signal on $memory\M2_SRAM.memory[48]$1509 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[48]).
+Adding EN signal on $memory\M2_SRAM.memory[47]$1507 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[47]).
+Adding EN signal on $memory\M2_SRAM.memory[46]$1505 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[46]).
+Adding EN signal on $memory\M2_SRAM.memory[45]$1503 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[45]).
+Adding EN signal on $memory\M2_SRAM.memory[44]$1501 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[44]).
+Adding EN signal on $memory\M2_SRAM.memory[43]$1499 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[43]).
+Adding EN signal on $memory\M2_SRAM.memory[42]$1497 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[42]).
+Adding EN signal on $memory\M2_SRAM.memory[41]$1495 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[41]).
+Adding EN signal on $memory\M2_SRAM.memory[40]$1493 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[40]).
+Adding EN signal on $memory\M2_SRAM.memory[3]$1419 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[3]).
+Adding EN signal on $memory\M2_SRAM.memory[39]$1491 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[39]).
+Adding EN signal on $memory\M2_SRAM.memory[38]$1489 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[38]).
+Adding EN signal on $memory\M2_SRAM.memory[37]$1487 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[37]).
+Adding EN signal on $memory\M2_SRAM.memory[36]$1485 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[36]).
+Adding EN signal on $memory\M2_SRAM.memory[35]$1483 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[35]).
+Adding EN signal on $memory\M2_SRAM.memory[34]$1481 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[34]).
+Adding EN signal on $memory\M2_SRAM.memory[33]$1479 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[33]).
+Adding EN signal on $memory\M2_SRAM.memory[32]$1477 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[32]).
+Adding EN signal on $memory\M2_SRAM.memory[31]$1475 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[31]).
+Adding EN signal on $memory\M2_SRAM.memory[30]$1473 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[30]).
+Adding EN signal on $memory\M2_SRAM.memory[2]$1417 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[2]).
+Adding EN signal on $memory\M2_SRAM.memory[29]$1471 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[29]).
+Adding EN signal on $memory\M2_SRAM.memory[28]$1469 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[28]).
+Adding EN signal on $memory\M2_SRAM.memory[27]$1467 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[27]).
+Adding EN signal on $memory\M2_SRAM.memory[26]$1465 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[26]).
+Adding EN signal on $memory\M2_SRAM.memory[25]$1463 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[25]).
+Adding EN signal on $memory\M2_SRAM.memory[255]$1923 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[255]).
+Adding EN signal on $memory\M2_SRAM.memory[254]$1921 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[254]).
+Adding EN signal on $memory\M2_SRAM.memory[253]$1919 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[253]).
+Adding EN signal on $memory\M2_SRAM.memory[252]$1917 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[252]).
+Adding EN signal on $memory\M2_SRAM.memory[251]$1915 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[251]).
+Adding EN signal on $memory\M2_SRAM.memory[250]$1913 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[250]).
+Adding EN signal on $memory\M2_SRAM.memory[24]$1461 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[24]).
+Adding EN signal on $memory\M2_SRAM.memory[249]$1911 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[249]).
+Adding EN signal on $memory\M2_SRAM.memory[248]$1909 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[248]).
+Adding EN signal on $memory\M2_SRAM.memory[247]$1907 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[247]).
+Adding EN signal on $memory\M2_SRAM.memory[246]$1905 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[246]).
+Adding EN signal on $memory\M2_SRAM.memory[245]$1903 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[245]).
+Adding EN signal on $memory\M2_SRAM.memory[244]$1901 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[244]).
+Adding EN signal on $memory\M2_SRAM.memory[243]$1899 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[243]).
+Adding EN signal on $memory\M2_SRAM.memory[242]$1897 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[242]).
+Adding EN signal on $memory\M2_SRAM.memory[241]$1895 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[241]).
+Adding EN signal on $memory\M2_SRAM.memory[240]$1893 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[240]).
+Adding EN signal on $memory\M2_SRAM.memory[23]$1459 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[23]).
+Adding EN signal on $memory\M2_SRAM.memory[239]$1891 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[239]).
+Adding EN signal on $memory\M2_SRAM.memory[238]$1889 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[238]).
+Adding EN signal on $memory\M2_SRAM.memory[237]$1887 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[237]).
+Adding EN signal on $memory\M2_SRAM.memory[236]$1885 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[236]).
+Adding EN signal on $memory\M2_SRAM.memory[235]$1883 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[235]).
+Adding EN signal on $memory\M2_SRAM.memory[234]$1881 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[234]).
+Adding EN signal on $memory\M2_SRAM.memory[233]$1879 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[233]).
+Adding EN signal on $memory\M2_SRAM.memory[232]$1877 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[232]).
+Adding EN signal on $memory\M2_SRAM.memory[231]$1875 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[231]).
+Adding EN signal on $memory\M2_SRAM.memory[230]$1873 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[230]).
+Adding EN signal on $memory\M2_SRAM.memory[22]$1457 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[22]).
+Adding EN signal on $memory\M2_SRAM.memory[229]$1871 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[229]).
+Adding EN signal on $memory\M2_SRAM.memory[228]$1869 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[228]).
+Adding EN signal on $memory\M2_SRAM.memory[227]$1867 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[227]).
+Adding EN signal on $memory\M2_SRAM.memory[226]$1865 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[226]).
+Adding EN signal on $memory\M2_SRAM.memory[225]$1863 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[225]).
+Adding EN signal on $memory\M2_SRAM.memory[224]$1861 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[224]).
+Adding EN signal on $memory\M2_SRAM.memory[223]$1859 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[223]).
+Adding EN signal on $memory\M2_SRAM.memory[222]$1857 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[222]).
+Adding EN signal on $memory\M2_SRAM.memory[221]$1855 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[221]).
+Adding EN signal on $memory\M2_SRAM.memory[220]$1853 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[220]).
+Adding EN signal on $memory\M2_SRAM.memory[21]$1455 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[21]).
+Adding EN signal on $memory\M2_SRAM.memory[219]$1851 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[219]).
+Adding EN signal on $memory\M2_SRAM.memory[218]$1849 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[218]).
+Adding EN signal on $memory\M2_SRAM.memory[217]$1847 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[217]).
+Adding EN signal on $memory\M2_SRAM.memory[216]$1845 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[216]).
+Adding EN signal on $memory\M2_SRAM.memory[215]$1843 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[215]).
+Adding EN signal on $memory\M2_SRAM.memory[214]$1841 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[214]).
+Adding EN signal on $memory\M2_SRAM.memory[213]$1839 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[213]).
+Adding EN signal on $memory\M2_SRAM.memory[212]$1837 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[212]).
+Adding EN signal on $memory\M2_SRAM.memory[211]$1835 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[211]).
+Adding EN signal on $memory\M2_SRAM.memory[210]$1833 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[210]).
+Adding EN signal on $memory\M2_SRAM.memory[20]$1453 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[20]).
+Adding EN signal on $memory\M2_SRAM.memory[209]$1831 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[209]).
+Adding EN signal on $memory\M2_SRAM.memory[208]$1829 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[208]).
+Adding EN signal on $memory\M2_SRAM.memory[207]$1827 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[207]).
+Adding EN signal on $memory\M2_SRAM.memory[206]$1825 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[206]).
+Adding EN signal on $memory\M2_SRAM.memory[205]$1823 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[205]).
+Adding EN signal on $memory\M2_SRAM.memory[204]$1821 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[204]).
+Adding EN signal on $memory\M2_SRAM.memory[203]$1819 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[203]).
+Adding EN signal on $memory\M2_SRAM.memory[202]$1817 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[202]).
+Adding EN signal on $memory\M2_SRAM.memory[201]$1815 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[201]).
+Adding EN signal on $memory\M2_SRAM.memory[200]$1813 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[200]).
+Adding EN signal on $memory\M2_SRAM.memory[1]$1415 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[1]).
+Adding EN signal on $memory\M2_SRAM.memory[19]$1451 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[19]).
+Adding EN signal on $memory\M2_SRAM.memory[199]$1811 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[199]).
+Adding EN signal on $memory\M2_SRAM.memory[198]$1809 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[198]).
+Adding EN signal on $memory\M2_SRAM.memory[197]$1807 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[197]).
+Adding EN signal on $memory\M2_SRAM.memory[196]$1805 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[196]).
+Adding EN signal on $memory\M2_SRAM.memory[195]$1803 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[195]).
+Adding EN signal on $memory\M2_SRAM.memory[194]$1801 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[194]).
+Adding EN signal on $memory\M2_SRAM.memory[193]$1799 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[193]).
+Adding EN signal on $memory\M2_SRAM.memory[192]$1797 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[192]).
+Adding EN signal on $memory\M2_SRAM.memory[191]$1795 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[191]).
+Adding EN signal on $memory\M2_SRAM.memory[190]$1793 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[190]).
+Adding EN signal on $memory\M2_SRAM.memory[18]$1449 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[18]).
+Adding EN signal on $memory\M2_SRAM.memory[189]$1791 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[189]).
+Adding EN signal on $memory\M2_SRAM.memory[188]$1789 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[188]).
+Adding EN signal on $memory\M2_SRAM.memory[187]$1787 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[187]).
+Adding EN signal on $memory\M2_SRAM.memory[186]$1785 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[186]).
+Adding EN signal on $memory\M2_SRAM.memory[185]$1783 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[185]).
+Adding EN signal on $memory\M2_SRAM.memory[184]$1781 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[184]).
+Adding EN signal on $memory\M2_SRAM.memory[183]$1779 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[183]).
+Adding EN signal on $memory\M2_SRAM.memory[182]$1777 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[182]).
+Adding EN signal on $memory\M2_SRAM.memory[181]$1775 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[181]).
+Adding EN signal on $memory\M2_SRAM.memory[180]$1773 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[180]).
+Adding EN signal on $memory\M2_SRAM.memory[17]$1447 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[17]).
+Adding EN signal on $memory\M2_SRAM.memory[179]$1771 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[179]).
+Adding EN signal on $memory\M2_SRAM.memory[178]$1769 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[178]).
+Adding EN signal on $memory\M2_SRAM.memory[177]$1767 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[177]).
+Adding EN signal on $memory\M2_SRAM.memory[176]$1765 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[176]).
+Adding EN signal on $memory\M2_SRAM.memory[175]$1763 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[175]).
+Adding EN signal on $memory\M2_SRAM.memory[174]$1761 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[174]).
+Adding EN signal on $memory\M2_SRAM.memory[173]$1759 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[173]).
+Adding EN signal on $memory\M2_SRAM.memory[172]$1757 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[172]).
+Adding EN signal on $memory\M2_SRAM.memory[171]$1755 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[171]).
+Adding EN signal on $memory\M2_SRAM.memory[170]$1753 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[170]).
+Adding EN signal on $memory\M2_SRAM.memory[16]$1445 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[16]).
+Adding EN signal on $memory\M2_SRAM.memory[169]$1751 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[169]).
+Adding EN signal on $memory\M2_SRAM.memory[168]$1749 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[168]).
+Adding EN signal on $memory\M2_SRAM.memory[167]$1747 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[167]).
+Adding EN signal on $memory\M2_SRAM.memory[166]$1745 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[166]).
+Adding EN signal on $memory\M2_SRAM.memory[165]$1743 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[165]).
+Adding EN signal on $memory\M2_SRAM.memory[164]$1741 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[164]).
+Adding EN signal on $memory\M2_SRAM.memory[163]$1739 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[163]).
+Adding EN signal on $memory\M2_SRAM.memory[162]$1737 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[162]).
+Adding EN signal on $memory\M2_SRAM.memory[161]$1735 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[161]).
+Adding EN signal on $memory\M2_SRAM.memory[160]$1733 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[160]).
+Adding EN signal on $memory\M2_SRAM.memory[15]$1443 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[15]).
+Adding EN signal on $memory\M2_SRAM.memory[159]$1731 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[159]).
+Adding EN signal on $memory\M2_SRAM.memory[158]$1729 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[158]).
+Adding EN signal on $memory\M2_SRAM.memory[157]$1727 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[157]).
+Adding EN signal on $memory\M2_SRAM.memory[156]$1725 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[156]).
+Adding EN signal on $memory\M2_SRAM.memory[155]$1723 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[155]).
+Adding EN signal on $memory\M2_SRAM.memory[154]$1721 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[154]).
+Adding EN signal on $memory\M2_SRAM.memory[153]$1719 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[153]).
+Adding EN signal on $memory\M2_SRAM.memory[152]$1717 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[152]).
+Adding EN signal on $memory\M2_SRAM.memory[151]$1715 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[151]).
+Adding EN signal on $memory\M2_SRAM.memory[150]$1713 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[150]).
+Adding EN signal on $memory\M2_SRAM.memory[14]$1441 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[14]).
+Adding EN signal on $memory\M2_SRAM.memory[149]$1711 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[149]).
+Adding EN signal on $memory\M2_SRAM.memory[148]$1709 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[148]).
+Adding EN signal on $memory\M2_SRAM.memory[147]$1707 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[147]).
+Adding EN signal on $memory\M2_SRAM.memory[146]$1705 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[146]).
+Adding EN signal on $memory\M2_SRAM.memory[145]$1703 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[145]).
+Adding EN signal on $memory\M2_SRAM.memory[144]$1701 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[144]).
+Adding EN signal on $memory\M2_SRAM.memory[143]$1699 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[143]).
+Adding EN signal on $memory\M2_SRAM.memory[142]$1697 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[142]).
+Adding EN signal on $memory\M2_SRAM.memory[141]$1695 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[141]).
+Adding EN signal on $memory\M2_SRAM.memory[140]$1693 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[140]).
+Adding EN signal on $memory\M2_SRAM.memory[13]$1439 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[13]).
+Adding EN signal on $memory\M2_SRAM.memory[139]$1691 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[139]).
+Adding EN signal on $memory\M2_SRAM.memory[138]$1689 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[138]).
+Adding EN signal on $memory\M2_SRAM.memory[137]$1687 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[137]).
+Adding EN signal on $memory\M2_SRAM.memory[136]$1685 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[136]).
+Adding EN signal on $memory\M2_SRAM.memory[135]$1683 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[135]).
+Adding EN signal on $memory\M2_SRAM.memory[134]$1681 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[134]).
+Adding EN signal on $memory\M2_SRAM.memory[133]$1679 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[133]).
+Adding EN signal on $memory\M2_SRAM.memory[132]$1677 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[132]).
+Adding EN signal on $memory\M2_SRAM.memory[131]$1675 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[131]).
+Adding EN signal on $memory\M2_SRAM.memory[130]$1673 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[130]).
+Adding EN signal on $memory\M2_SRAM.memory[12]$1437 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[12]).
+Adding EN signal on $memory\M2_SRAM.memory[129]$1671 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[129]).
+Adding EN signal on $memory\M2_SRAM.memory[128]$1669 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[128]).
+Adding EN signal on $memory\M2_SRAM.memory[127]$1667 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[127]).
+Adding EN signal on $memory\M2_SRAM.memory[126]$1665 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[126]).
+Adding EN signal on $memory\M2_SRAM.memory[125]$1663 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[125]).
+Adding EN signal on $memory\M2_SRAM.memory[124]$1661 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[124]).
+Adding EN signal on $memory\M2_SRAM.memory[123]$1659 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[123]).
+Adding EN signal on $memory\M2_SRAM.memory[122]$1657 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[122]).
+Adding EN signal on $memory\M2_SRAM.memory[121]$1655 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[121]).
+Adding EN signal on $memory\M2_SRAM.memory[120]$1653 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[120]).
+Adding EN signal on $memory\M2_SRAM.memory[11]$1435 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[11]).
+Adding EN signal on $memory\M2_SRAM.memory[119]$1651 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[119]).
+Adding EN signal on $memory\M2_SRAM.memory[118]$1649 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[118]).
+Adding EN signal on $memory\M2_SRAM.memory[117]$1647 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[117]).
+Adding EN signal on $memory\M2_SRAM.memory[116]$1645 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[116]).
+Adding EN signal on $memory\M2_SRAM.memory[115]$1643 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[115]).
+Adding EN signal on $memory\M2_SRAM.memory[114]$1641 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[114]).
+Adding EN signal on $memory\M2_SRAM.memory[113]$1639 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[113]).
+Adding EN signal on $memory\M2_SRAM.memory[112]$1637 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[112]).
+Adding EN signal on $memory\M2_SRAM.memory[111]$1635 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[111]).
+Adding EN signal on $memory\M2_SRAM.memory[110]$1633 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[110]).
+Adding EN signal on $memory\M2_SRAM.memory[10]$1433 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[10]).
+Adding EN signal on $memory\M2_SRAM.memory[109]$1631 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[109]).
+Adding EN signal on $memory\M2_SRAM.memory[108]$1629 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[108]).
+Adding EN signal on $memory\M2_SRAM.memory[107]$1627 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[107]).
+Adding EN signal on $memory\M2_SRAM.memory[106]$1625 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[106]).
+Adding EN signal on $memory\M2_SRAM.memory[105]$1623 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[105]).
+Adding EN signal on $memory\M2_SRAM.memory[104]$1621 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[104]).
+Adding EN signal on $memory\M2_SRAM.memory[103]$1619 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[103]).
+Adding EN signal on $memory\M2_SRAM.memory[102]$1617 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[102]).
+Adding EN signal on $memory\M2_SRAM.memory[101]$1615 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[101]).
+Adding EN signal on $memory\M2_SRAM.memory[100]$1613 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[100]).
+Adding EN signal on $memory\M2_SRAM.memory[0]$1413 ($dff) from module RISC_SPM (D = \M0_Processor.ALU.data_2, Q = \M2_SRAM.memory[0]).
+
+5.20.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+Removed 256 unused cells and 257 unused wires.
+<suppressed ~257 debug messages>
+
+5.20.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+
+5.20.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.20.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \RISC_SPM..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~21 debug messages>
+
+5.20.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \RISC_SPM.
+Performed a total of 0 changes.
+
+5.20.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+Removed a total of 0 cells.
+
+5.20.22. Executing OPT_SHARE pass.
+
+5.20.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.20.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+
+5.20.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+
+5.20.26. Finished OPT passes. (There is nothing left to do.)
+
+5.21. Executing TECHMAP pass (map to technology primitives).
+
+5.21.1. Executing Verilog-2005 frontend: /build/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/build/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+5.21.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $dffe.
+Running "alumacc" on wrapper $extern:wrap:$neg:A_SIGNED=0:A_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$neg:A_SIGNED=0:A_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$neg:A_SIGNED=0:A_WIDTH=8:Y_WIDTH=8:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $logic_not.
+Using template $paramod$a1bc51c02ce12ac21eb18988e83292af48ed7d72\_90_alu for cells of type $alu.
+Using template $paramod$c3cd1564c35d873179656addd6052d7ea8b6d991\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$645fe0cc96ae5edb83bff90cc2c78f4a20ca3e3c\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $adff.
+Using template $paramod$c5c783b17ab1d780abfad8cfe6563a0a7b47a3b0\_90_pmux for cells of type $pmux.
+Using template $paramod$d629d85c8826a74239b9178d1930215a43b0ceb0\_90_pmux for cells of type $pmux.
+Using template $paramod$a13703aa027da371a1931fc542d213d7de559b19\_90_pmux for cells of type $pmux.
+Using template $paramod$b6ec48645094baeb70d6b93add0cdbbe7498ad3c\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using template $paramod$fd7bfb1a4f3a7c2ac1a35670d0fa64ccc7b91841\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~1725 debug messages>
+
+5.22. Executing OPT pass (performing simple optimizations).
+
+5.22.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+<suppressed ~358 debug messages>
+
+5.22.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+<suppressed ~270 debug messages>
+Removed a total of 90 cells.
+
+5.22.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.22.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+Removed 28 unused cells and 536 unused wires.
+<suppressed ~29 debug messages>
+
+5.22.5. Finished fast OPT passes.
+
+5.23. Executing ABC pass (technology mapping using ABC).
+
+5.23.1. Extracting gate netlist of module `\RISC_SPM' to `<abc-temp-dir>/input.blif'..
+Extracted 3089 gates and 5208 wires to a netlist network with 2117 inputs and 302 outputs.
+
+5.23.1.1. Executing ABC.
+Running ABC command: <yosys-exe-dir>/yosys-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+5.23.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        5
+ABC RESULTS:            ANDNOT cells:      401
+ABC RESULTS:               MUX cells:     2103
+ABC RESULTS:              NAND cells:       25
+ABC RESULTS:               NOR cells:       34
+ABC RESULTS:               NOT cells:       34
+ABC RESULTS:                OR cells:      357
+ABC RESULTS:             ORNOT cells:       31
+ABC RESULTS:              XNOR cells:        2
+ABC RESULTS:               XOR cells:       27
+ABC RESULTS:        internal signals:     2789
+ABC RESULTS:           input signals:     2117
+ABC RESULTS:          output signals:      302
+Removing temp directory.
+
+5.24. Executing OPT pass (performing simple optimizations).
+
+5.24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+<suppressed ~1024 debug messages>
+
+5.24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+5.24.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.24.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+Removed 8 unused cells and 3226 unused wires.
+<suppressed ~28 debug messages>
+
+5.24.5. Finished fast OPT passes.
+
+5.25. Executing HIERARCHY pass (managing design hierarchy).
+
+5.25.1. Analyzing design hierarchy..
+Top module:  \RISC_SPM
+
+5.25.2. Analyzing design hierarchy..
+Top module:  \RISC_SPM
+Removed 0 unused modules.
+
+5.26. Printing statistics.
+
+=== RISC_SPM ===
+
+   Number of wires:               3359
+   Number of wire bits:           5518
+   Number of public wires:         386
+   Number of public wire bits:    2545
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               5126
+     $_ANDNOT_                     399
+     $_AND_                          5
+     $_DFFE_PN0P_                   65
+     $_DFFE_PP_                   2048
+     $_DFF_PN0_                      4
+     $_MUX_                       2103
+     $_NAND_                        25
+     $_NOR_                         34
+     $_NOT_                         26
+     $_ORNOT_                       31
+     $_OR_                         357
+     $_XNOR_                         2
+     $_XOR_                         27
+
+5.27. Executing CHECK pass (checking for obvious problems).
+Checking module RISC_SPM...
+Found and reported 0 problems.
+
+6. Generating Graphviz representation of design.
+Writing dot description to `/openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/synthesis/post_techmap.dot'.
+Dumping module RISC_SPM to page 1.
+
+7. Executing SHARE pass (SAT-based resource sharing).
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+Removed a total of 0 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \RISC_SPM..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \RISC_SPM.
+Performed a total of 0 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\RISC_SPM'.
+Removed a total of 0 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module RISC_SPM.
+
+8.9. Finished OPT passes. (There is nothing left to do.)
+
+9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+Removed 0 unused cells and 106 unused wires.
+<suppressed ~106 debug messages>
+
+10. Printing statistics.
+
+=== RISC_SPM ===
+
+   Number of wires:               3253
+   Number of wire bits:           5128
+   Number of public wires:         280
+   Number of public wire bits:    2155
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               5126
+     $_ANDNOT_                     399
+     $_AND_                          5
+     $_DFFE_PN0P_                   65
+     $_DFFE_PP_                   2048
+     $_DFF_PN0_                      4
+     $_MUX_                       2103
+     $_NAND_                        25
+     $_NOR_                         34
+     $_NOT_                         26
+     $_ORNOT_                       31
+     $_OR_                         357
+     $_XNOR_                         2
+     $_XOR_                         27
+
+mapping tbuf
+
+11. Executing TECHMAP pass (map to technology primitives).
+
+11.1. Executing Verilog-2005 frontend: /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+11.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+12. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+13. Executing MUXCOVER pass (mapping to wider MUXes).
+Covering MUX trees in module RISC_SPM..
+  Treeifying 2103 MUXes:
+    Found tree with 4 MUXes at root \data_bus [0].
+    Found tree with 4 MUXes at root \data_bus [1].
+    Found tree with 4 MUXes at root \data_bus [3].
+    Found tree with 4 MUXes at root \data_bus [5].
+    Found tree with 4 MUXes at root \data_bus [6].
+    Found tree with 4 MUXes at root \data_bus [7].
+    Found tree with 255 MUXes at root \memory_bus [0].
+    Found tree with 255 MUXes at root \memory_bus [1].
+    Found tree with 255 MUXes at root \memory_bus [2].
+    Found tree with 255 MUXes at root \memory_bus [3].
+    Found tree with 255 MUXes at root \memory_bus [4].
+    Found tree with 255 MUXes at root \memory_bus [5].
+    Found tree with 255 MUXes at root \memory_bus [6].
+    Found tree with 255 MUXes at root \memory_bus [7].
+    Found tree with 2 MUXes at root \M0_Processor.Add_R.data_in [0].
+    Found tree with 2 MUXes at root \M0_Processor.Add_R.data_in [1].
+    Found tree with 2 MUXes at root \M0_Processor.Add_R.data_in [2].
+    Found tree with 2 MUXes at root \M0_Processor.Add_R.data_in [3].
+    Found tree with 2 MUXes at root \M0_Processor.Add_R.data_in [4].
+    Found tree with 2 MUXes at root \M0_Processor.Add_R.data_in [5].
+    Found tree with 2 MUXes at root \M0_Processor.Add_R.data_in [6].
+    Found tree with 2 MUXes at root \M0_Processor.Add_R.data_in [7].
+    Found tree with 1 MUXes at root $abc$10779$new_n2677_.
+    Found tree with 1 MUXes at root $abc$10779$new_n2654_.
+    Found tree with 1 MUXes at root $abc$10779$new_n2632_.
+    Found tree with 1 MUXes at root $abc$10779$new_n2608_.
+    Found tree with 4 MUXes at root $abc$10779$new_n2599_.
+    Found tree with 1 MUXes at root $abc$10779$new_n2580_.
+    Found tree with 1 MUXes at root $abc$10779$new_n2559_.
+    Found tree with 4 MUXes at root $abc$10779$new_n2551_.
+    Found tree with 1 MUXes at root $abc$10779$new_n2534_.
+    Found tree with 1 MUXes at root $abc$10779$flatten\M0_Processor.\PC.$0\count[7:0][7].
+    Found tree with 1 MUXes at root $abc$10779$flatten\M0_Processor.\PC.$0\count[7:0][6].
+    Found tree with 1 MUXes at root $abc$10779$flatten\M0_Processor.\PC.$0\count[7:0][5].
+    Found tree with 1 MUXes at root $abc$10779$flatten\M0_Processor.\PC.$0\count[7:0][4].
+    Found tree with 1 MUXes at root $abc$10779$flatten\M0_Processor.\PC.$0\count[7:0][3].
+    Found tree with 1 MUXes at root $abc$10779$flatten\M0_Processor.\PC.$0\count[7:0][2].
+    Found tree with 1 MUXes at root $abc$10779$flatten\M0_Processor.\PC.$0\count[7:0][1].
+    Found tree with 1 MUXes at root $abc$10779$flatten\M0_Processor.\PC.$0\count[7:0][0].
+    Finished treeification: Found 39 trees.
+  Covering trees:
+    Replaced tree at \data_bus [0]: 4 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \data_bus [1]: 4 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \data_bus [3]: 4 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \data_bus [5]: 4 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \data_bus [6]: 4 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \data_bus [7]: 4 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \memory_bus [0]: 0 MUX2, 85 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \memory_bus [1]: 0 MUX2, 85 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \memory_bus [2]: 0 MUX2, 85 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \memory_bus [3]: 0 MUX2, 85 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \memory_bus [4]: 0 MUX2, 85 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \memory_bus [5]: 0 MUX2, 85 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \memory_bus [6]: 0 MUX2, 85 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \memory_bus [7]: 0 MUX2, 85 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \M0_Processor.Add_R.data_in [0]: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \M0_Processor.Add_R.data_in [1]: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \M0_Processor.Add_R.data_in [2]: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \M0_Processor.Add_R.data_in [3]: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \M0_Processor.Add_R.data_in [4]: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \M0_Processor.Add_R.data_in [5]: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \M0_Processor.Add_R.data_in [6]: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at \M0_Processor.Add_R.data_in [7]: 2 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$new_n2677_: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$new_n2654_: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$new_n2632_: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$new_n2608_: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$new_n2599_: 4 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$new_n2580_: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$new_n2559_: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$new_n2551_: 4 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$new_n2534_: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$flatten\M0_Processor.\PC.$0\count[7:0][7]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$flatten\M0_Processor.\PC.$0\count[7:0][6]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$flatten\M0_Processor.\PC.$0\count[7:0][5]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$flatten\M0_Processor.\PC.$0\count[7:0][4]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$flatten\M0_Processor.\PC.$0\count[7:0][3]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$flatten\M0_Processor.\PC.$0\count[7:0][2]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$flatten\M0_Processor.\PC.$0\count[7:0][1]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+    Replaced tree at $abc$10779$flatten\M0_Processor.\PC.$0\count[7:0][0]: 1 MUX2, 0 MUX4, 0 MUX8, 0 MUX16
+  Added a total of 0 decoder MUXes.
+<suppressed ~37816 debug messages>
+
+14. Executing TECHMAP pass (map to technology primitives).
+
+14.1. Executing Verilog-2005 frontend: /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.tech/openlane/sky130_fd_sc_hd/mux4_map.v
+Parsing Verilog input from `/home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.tech/openlane/sky130_fd_sc_hd/mux4_map.v' to AST representation.
+Generating RTLIL representation for module `\$_MUX4_'.
+Successfully finished Verilog frontend.
+
+14.2. Continuing TECHMAP pass.
+Using template \$_MUX4_ for cells of type $_MUX4_.
+No more expansions possible.
+<suppressed ~683 debug messages>
+
+15. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+16. Executing TECHMAP pass (map to technology primitives).
+
+16.1. Executing Verilog-2005 frontend: /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.tech/openlane/sky130_fd_sc_hd/mux2_map.v
+Parsing Verilog input from `/home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.tech/openlane/sky130_fd_sc_hd/mux2_map.v' to AST representation.
+Generating RTLIL representation for module `\$_MUX_'.
+Successfully finished Verilog frontend.
+
+16.2. Continuing TECHMAP pass.
+Using template \$_MUX_ for cells of type $_MUX_.
+No more expansions possible.
+<suppressed ~66 debug messages>
+
+17. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+18. Executing TECHMAP pass (map to technology primitives).
+
+18.1. Executing Verilog-2005 frontend: /home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/MSUCAP/tanvir.arafin/pdk/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+18.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+19. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+20. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+20.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\RISC_SPM':
+  mapped 69 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_2 cells.
+  mapped 2048 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_2 cells.
+
+21. Printing statistics.
+
+=== RISC_SPM ===
+
+   Number of wires:              10382
+   Number of wire bits:          12257
+   Number of public wires:         280
+   Number of public wire bits:    2155
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               5879
+     $_ANDNOT_                     399
+     $_AND_                          5
+     $_MUX_                       2113
+     $_NAND_                        25
+     $_NOR_                         34
+     $_NOT_                         26
+     $_ORNOT_                       31
+     $_OR_                         357
+     $_XNOR_                         2
+     $_XOR_                         27
+     sky130_fd_sc_hd__dfrtp_2       69
+     sky130_fd_sc_hd__dfxtp_2     2048
+     sky130_fd_sc_hd__mux2_1        63
+     sky130_fd_sc_hd__mux4_1       680
+
+[INFO]: ABC: WireLoad : S_4
+
+22. Executing ABC pass (technology mapping using ABC).
+
+22.1. Extracting gate netlist of module `\RISC_SPM' to `/tmp/yosys-abc-UfdqQZ/input.blif'..
+Extracted 3019 gates and 5167 wires to a netlist network with 2148 inputs and 2166 outputs.
+
+22.1.1. Executing ABC.
+Running ABC command: /build/bin/yosys-abc -s -f /tmp/yosys-abc-UfdqQZ/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-UfdqQZ/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-UfdqQZ/input.blif 
+ABC: + read_lib -w /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/trimmed.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.08 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/trimmed.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.11 sec
+ABC: Memory =    7.77 MB. Time =     0.11 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/synthesis/yosys.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_1".
+ABC: Setting output load to be 33.442001.
+ABC: + read_constr /openlane/designs/RISC_SPM/runs/RUN_2021.12.08_16.43.47/tmp/synthesis/yosys.sdc 
+ABC: + fx 
+ABC: + mfs 
+ABC: + strash 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + retime -D -D 300000.0 -M 5 
+ABC: + scleanup 
+ABC: Error: The network is combinational.
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + refactor 
+ABC: + balance 
+ABC: + rewrite 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + refactor -z 
+ABC: + rewrite -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + fraig_restore 
+ABC: + amap -m -Q 0.1 -F 20 -A 20 -C 5000 
+ABC: + retime -D -D 300000.0 
+ABC: + buffer -N 5 -S 750.0 
+ABC: Node 4397 has dup fanin 88.
+ABC: Node 4397 has dup fanin 2136.
+ABC: Node 4397 has dup fanin 88.
+ABC: Node 4397 has dup fanin 2136.
+ABC: Node 4402 has dup fanin 85.
+ABC: Node 4402 has dup fanin 2137.
+ABC: Node 4402 has dup fanin 85.
+ABC: Node 4402 has dup fanin 2137.
+ABC: Cannot find the default PI driving cell (sky130_fd_sc_hd__inv_1) in the library.
+ABC: + upsize -D 300000.0 
+ABC: Cannot find the default PI driving cell (sky130_fd_sc_hd__inv_1) in the library.
+ABC: Current delay (3335.26 ps) does not exceed the target delay (300000.00 ps). Upsizing is not performed.
+ABC: + dnsize -D 300000.0 
+ABC: Cannot find the default PI driving cell (sky130_fd_sc_hd__inv_1) in the library.
+ABC: + stime -p 
+ABC: Cannot find the default PI driving cell (sky130_fd_sc_hd__inv_1) in the library.
+ABC: WireLoad = "none"  Gates =   3655 ( 30.7 %)   Cap = 16.8 ff (  6.6 %)   Area =    28416.00 ( 69.3 %)   Delay =  3034.28 ps  (  0.4 %)               
+ABC: Path  0 --    2141 : 0    5 pi                       A =   0.00  Df =   0.0   -0.0 ps  S =   0.0 ps  Cin =  0.0 ff  Cout =  11.1 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --    4321 : 1    2 sky130_fd_sc_hd__inv_2   A =   3.75  Df =  24.8  -11.2 ps  S =  24.5 ps  Cin =  4.5 ff  Cout =   3.7 ff  Cmax = 331.4 ff  G =   79  
+ABC: Path  2 --    4323 : 4    4 sky130_fd_sc_hd__or4_2   A =   8.76  Df = 729.1 -563.8 ps  S = 144.4 ps  Cin =  1.5 ff  Cout =  14.2 ff  Cmax = 310.4 ff  G =  911  
+ABC: Path  3 --    4358 : 3    3 sky130_fd_sc_hd__o21ai_2 A =   8.76  Df =1169.5 -549.1 ps  S = 471.2 ps  Cin =  4.5 ff  Cout =  40.5 ff  Cmax = 139.2 ff  G =  884  
+ABC: Path  4 --    4404 : 1    2 sky130_fd_sc_hd__inv_2   A =   3.75  Df =1222.2 -518.1 ps  S =  70.8 ps  Cin =  4.5 ff  Cout =   4.0 ff  Cmax = 331.4 ff  G =   86  
+ABC: Path  5 --    4420 : 4    1 sky130_fd_sc_hd__or4_2   A =   8.76  Df =1869.1 -285.1 ps  S =  92.3 ps  Cin =  1.5 ff  Cout =   1.8 ff  Cmax = 310.4 ff  G =  114  
+ABC: Path  6 --    4435 : 4    1 sky130_fd_sc_hd__or4_2   A =   8.76  Df =2509.3 -714.3 ps  S =  95.2 ps  Cin =  1.5 ff  Cout =   2.4 ff  Cmax = 310.4 ff  G =  153  
+ABC: Path  7 --    4445 : 5    1 sky130_fd_sc_hd__o32a_2  A =  11.26  Df =2891.2 -956.8 ps  S =  59.4 ps  Cin =  2.3 ff  Cout =   4.6 ff  Cmax = 300.3 ff  G =  193  
+ABC: Path  8 --    4446 : 1    1 sky130_fd_sc_hd__inv_2   A =   3.75  Df =3034.3-1020.1 ps  S = 157.2 ps  Cin =  4.5 ff  Cout =  33.4 ff  Cmax = 331.4 ff  G =  749  
+ABC: Start-point = pi2140 (\M1_Controller.state [1]).  End-point = po8 ($auto$rtlil.cc:2296:MuxGate$18756).
+ABC: + print_stats -m 
+ABC: netlist                       : i/o = 2148/ 2166  lat =    0  nd =  3655  edge =  10625  area =28414.13  delay =12.00  lev = 12
+ABC: + write_blif /tmp/yosys-abc-UfdqQZ/output.blif 
+
+22.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__a21bo_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a221o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a22o_2 cells:     2096
+ABC RESULTS:   sky130_fd_sc_hd__a311o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a31o_2 cells:       12
+ABC RESULTS:   sky130_fd_sc_hd__a32o_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a41o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and3_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__and4_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__buf_1 cells:      789
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:      328
+ABC RESULTS:   sky130_fd_sc_hd__inv_4 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__mux2_2 cells:       16
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:        9
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nor3_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o2111ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_2 cells:       12
+ABC RESULTS:   sky130_fd_sc_hd__o221a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o22a_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2a_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o31a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o32a_2 cells:       10
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:      277
+ABC RESULTS:   sky130_fd_sc_hd__or2b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or3_2 cells:       26
+ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__or4_2 cells:       26
+ABC RESULTS:        internal signals:      853
+ABC RESULTS:           input signals:     2148
+ABC RESULTS:          output signals:     2166
+Removing temp directory.
+
+23. Executing SETUNDEF pass (replace undef values with defined constants).
+
+24. Executing HILOMAP pass (mapping to constant drivers).
+
+25. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+26. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \RISC_SPM..
+Removed 0 unused cells and 11543 unused wires.
+<suppressed ~8 debug messages>
+
+27. Executing INSBUF pass (insert buffer cells for connected wires).
+
+28. Executing CHECK pass (checking for obvious problems).
+Checking module RISC_SPM...
+Warning: Wire RISC_SPM.\memory_bus [7] is used but has no driver.
+Warning: Wire RISC_SPM.\memory_bus [6] is used but has no driver.
+Warning: Wire RISC_SPM.\memory_bus [5] is used but has no driver.
+Warning: Wire RISC_SPM.\memory_bus [4] is used but has no driver.
+Warning: Wire RISC_SPM.\memory_bus [3] is used but has no driver.
+Warning: Wire RISC_SPM.\memory_bus [2] is used but has no driver.
+Warning: Wire RISC_SPM.\memory_bus [1] is used but has no driver.
+Warning: Wire RISC_SPM.\memory_bus [0] is used but has no driver.
+Warning: Wire RISC_SPM.\instruction_bus [7] is used but has no driver.
+Warning: Wire RISC_SPM.\instruction_bus [6] is used but has no driver.
+Warning: Wire RISC_SPM.\instruction_bus [5] is used but has no driver.
+Warning: Wire RISC_SPM.\instruction_bus [4] is used but has no driver.
+Warning: Wire RISC_SPM.\instruction_bus [3] is used but has no driver.
+Warning: Wire RISC_SPM.\instruction_bus [2] is used but has no driver.
+Warning: Wire RISC_SPM.\instruction_bus [1] is used but has no driver.
+Warning: Wire RISC_SPM.\instruction_bus [0] is used but has no driver.
+Warning: Wire RISC_SPM.\data_bus [7] is used but has no driver.
+Warning: Wire RISC_SPM.\data_bus [6] is used but has no driver.
+Warning: Wire RISC_SPM.\data_bus [5] is used but has no driver.
+Warning: Wire RISC_SPM.\data_bus [4] is used but has no driver.
+Warning: Wire RISC_SPM.\data_bus [3] is used but has no driver.
+Warning: Wire RISC_SPM.\data_bus [2] is used but has no driver.
+Warning: Wire RISC_SPM.\data_bus [1] is used but has no driver.
+Warning: Wire RISC_SPM.\data_bus [0] is used but has no driver.
+Warning: Wire RISC_SPM.\address_bus [7] is used but has no driver.
+Warning: Wire RISC_SPM.\address_bus [6] is used but has no driver.
+Warning: Wire RISC_SPM.\address_bus [5] is used but has no driver.
+Warning: Wire RISC_SPM.\address_bus [4] is used but has no driver.
+Warning: Wire RISC_SPM.\address_bus [3] is used but has no driver.
+Warning: Wire RISC_SPM.\address_bus [2] is used but has no driver.
+Warning: Wire RISC_SPM.\address_bus [1] is used but has no driver.
+Warning: Wire RISC_SPM.\address_bus [0] is used but has no driver.
+Found and reported 32 problems.
+
+29. Printing statistics.
+
+=== RISC_SPM ===
+
+   Number of wires:               6489
+   Number of wire bits:           6517
+   Number of public wires:        2120
+   Number of public wire bits:    2148
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               6515
+     sky130_fd_sc_hd__a21bo_2        1
+     sky130_fd_sc_hd__a21o_2         3
+     sky130_fd_sc_hd__a21oi_2        3
+     sky130_fd_sc_hd__a221o_2        1
+     sky130_fd_sc_hd__a22o_2      2096
+     sky130_fd_sc_hd__a311o_2        1
+     sky130_fd_sc_hd__a31o_2        12
+     sky130_fd_sc_hd__a32o_2         4
+     sky130_fd_sc_hd__a41o_2         1
+     sky130_fd_sc_hd__and2_2         1
+     sky130_fd_sc_hd__and3_2         2
+     sky130_fd_sc_hd__and4_2         4
+     sky130_fd_sc_hd__buf_1        789
+     sky130_fd_sc_hd__dfrtp_2       69
+     sky130_fd_sc_hd__dfxtp_2     2048
+     sky130_fd_sc_hd__inv_2        328
+     sky130_fd_sc_hd__inv_4          4
+     sky130_fd_sc_hd__mux2_1        63
+     sky130_fd_sc_hd__mux2_2        16
+     sky130_fd_sc_hd__mux4_1       680
+     sky130_fd_sc_hd__nand2_2        9
+     sky130_fd_sc_hd__nor2_2         3
+     sky130_fd_sc_hd__nor3_2         2
+     sky130_fd_sc_hd__o2111ai_2      1
+     sky130_fd_sc_hd__o211ai_2       1
+     sky130_fd_sc_hd__o21a_2         5
+     sky130_fd_sc_hd__o21ai_2       12
+     sky130_fd_sc_hd__o221a_2        1
+     sky130_fd_sc_hd__o221ai_2       4
+     sky130_fd_sc_hd__o22a_2         5
+     sky130_fd_sc_hd__o2bb2a_2       2
+     sky130_fd_sc_hd__o31a_2         1
+     sky130_fd_sc_hd__o32a_2        10
+     sky130_fd_sc_hd__or2_2        277
+     sky130_fd_sc_hd__or2b_2         1
+     sky130_fd_sc_hd__or3_2         26
+     sky130_fd_sc_hd__or3b_2         3
+     sky130_fd_sc_hd__or4_2         26
+
+   Chip area for module '\RISC_SPM': 92367.337600
+
+30. Executing Verilog backend.
+Dumping module `\RISC_SPM'.
+
+Warnings: 32 unique messages, 32 total
+End of script. Logfile hash: 3fdfa1f335, CPU: user 5.69s system 0.06s, MEM: 58.35 MB peak
+Yosys 0.9+4052 (git sha1 UNKNOWN, gcc 8.3.1 -fPIC -Os)
+Time spent: 53% 2x abc (6 sec), 17% 2x write_verilog (2 sec), ...
